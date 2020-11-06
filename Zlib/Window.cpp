@@ -45,9 +45,9 @@ void Window::Init()
 	hWnd = ::CreateWindow(
 		L"HelloWorld",
 		L"Title",
-		WS_VSCROLL | WS_HSCROLL,
-		NULL,
-		NULL,
+		WS_OVERLAPPEDWINDOW,
+		100,
+		100,
 		800,
 		600,
 		NULL,
@@ -67,6 +67,13 @@ void Window::Init()
 
 	// ¸üÐÂ´°¿Ú
 	UpdateWindow(hWnd);
+
+	MSG msg;
+	while (GetMessage(&msg, NULL, 0, 0))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
 }
 
 LRESULT CALLBACK Window::WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
