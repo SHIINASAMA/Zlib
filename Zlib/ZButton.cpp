@@ -1,12 +1,12 @@
-#include "ZStatic.h"
+#include "ZButton.h"
 
-ZStatic::ZStatic()
+ZButton::ZButton()
 {
-	this->Type = L"static";
+	this->Type = L"button";
 	this->Style = WS_VISIBLE | WS_CHILD;
 }
 
-void ZStatic::Create(HWND hWnd)
+void ZButton::Create(HWND hWnd)
 {
 	this->hWnd = CreateWindow(Type,
 		Text,

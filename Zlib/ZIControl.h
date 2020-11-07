@@ -1,7 +1,7 @@
 #pragma once
 #include "ZString.h"
 
-class ZControl
+class ZIControl
 {
 public:
 	HWND hWnd;
@@ -15,4 +15,6 @@ public:
 	HMENU ID;
 
 	virtual void Create(HWND hWnd) = 0;
+	ZString GetText();
+	void SetText(ZString str);
 };

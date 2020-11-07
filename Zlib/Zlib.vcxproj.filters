@@ -21,10 +21,13 @@
     <ClInclude Include="ZWindow.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ZControl.h">
+    <ClInclude Include="ZStatic.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="ZStatic.h">
+    <ClInclude Include="ZIControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZButton.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,10 +41,13 @@
     <ClCompile Include="ZWindow.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ZControl.cpp">
+    <ClCompile Include="ZStatic.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ZStatic.cpp">
+    <ClCompile Include="ZIControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZButton.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

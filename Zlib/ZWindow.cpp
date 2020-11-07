@@ -29,12 +29,12 @@ void ZWindow::ZStartLoop()
 	}
 }
 
-void ZWindow::ZAddControl(ZControl* ctrl)
+void ZWindow::ZAddControl(ZIControl* ctrl)
 {
 	ctrl->Create(this->hWnd);
 }
 
-void ZWindow::ZRemoveControl(ZControl* ctrl)
+void ZWindow::ZRemoveControl(ZIControl* ctrl)
 {
 	DestroyWindow(ctrl->hWnd);
 }
@@ -42,6 +42,21 @@ void ZWindow::ZRemoveControl(ZControl* ctrl)
 void ZWindow::ZRenoveControl(HWND hWnd)
 {
 	DestroyWindow(hWnd);
+}
+
+ZString ZWindow::GetText()
+{
+	UINT len = GetWindowTextLengthW(this->hWnd);
+	WChar* str = new WChar[len];
+	GetWindowTextW(this->hWnd, str, len);
+	ZString temp;
+	temp.Pause(str);
+	return temp;
+}
+
+void ZWindow::SetText(ZString str)
+{
+	SetWindowTextW(this->hWnd, str);
 }
 
 int ZWindow::ZRegisterClass()
@@ -105,4 +120,5 @@ void ZWindow::ZCreateWindow()
 void ZWindow::ZInit()
 {
 	ZRegisterClass();
+	ZCreateWindow();
 }

@@ -1,5 +1,19 @@
 #include "ZString.h"
 
+ZString::ZString()
+{
+}
+
+ZString::ZString(WString str)
+{
+	this->str = str;
+}
+
+ZString::ZString(AString str)
+{
+	Pause(str);
+}
+
 void ZString::Pause(WString str)
 {
 	this->str = str;
@@ -37,6 +51,11 @@ AString ZString::ToAString()
 void ZString::operator=(WString str)
 {
 	this->str = str;
+}
+
+void ZString::operator=(WChar str[])
+{
+	this->str = &str[0];
 }
 
 ZString::operator WString()

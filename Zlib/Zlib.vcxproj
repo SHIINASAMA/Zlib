@@ -140,14 +140,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ZControl.h" />
+    <ClInclude Include="ZButton.h" />
+    <ClInclude Include="ZIControl.h" />
     <ClInclude Include="ZStatic.h" />
     <ClInclude Include="ZWindow.h" />
     <ClInclude Include="ZString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="ZControl.cpp" />
+    <ClCompile Include="ZButton.cpp" />
+    <ClCompile Include="ZIControl.cpp" />
     <ClCompile Include="ZStatic.cpp" />
     <ClCompile Include="ZWindow.cpp" />
     <ClCompile Include="ZString.cpp" />
