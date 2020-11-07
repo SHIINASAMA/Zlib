@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ZButton.h" />
+    <ClInclude Include="ZEdit.h" />
     <ClInclude Include="ZIControl.h" />
     <ClInclude Include="ZStatic.h" />
     <ClInclude Include="ZWindow.h" />
@@ -149,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ZButton.cpp" />
+    <ClCompile Include="ZEdit.cpp" />
     <ClCompile Include="ZIControl.cpp" />
     <ClCompile Include="ZStatic.cpp" />
     <ClCompile Include="ZWindow.cpp" />
