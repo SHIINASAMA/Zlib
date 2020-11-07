@@ -47,11 +47,16 @@ public:
 	void ZStartLoop();
 
 	// Ìí¼Ó¿Ø¼þ
-	int ZAddControl(ZControl ctrl);
+	void ZAddControl(ZControl* ctrl);
+
+	// ÒÆ³ý¿Ø¼þ
+	void ZRemoveControl(ZControl* ctrl);
+
+	void ZRenoveControl(HWND hWnd);
 
 private:
 	// ×¢²á´°¿Ú
-	int ZRegisterClassZ();
+	int ZRegisterClass();
 
 	// ³õÊ¼»¯Instance¾ä±ú
 	void ZInitInstance();

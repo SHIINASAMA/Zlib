@@ -24,6 +24,9 @@
     <ClInclude Include="ZControl.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ZStatic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -36,6 +39,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ZControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZStatic.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

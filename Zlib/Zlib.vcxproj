@@ -141,12 +141,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ZControl.h" />
+    <ClInclude Include="ZStatic.h" />
     <ClInclude Include="ZWindow.h" />
     <ClInclude Include="ZString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ZControl.cpp" />
+    <ClCompile Include="ZStatic.cpp" />
     <ClCompile Include="ZWindow.cpp" />
     <ClCompile Include="ZString.cpp" />
   </ItemGroup>

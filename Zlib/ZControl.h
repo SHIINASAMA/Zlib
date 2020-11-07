@@ -4,6 +4,7 @@
 class ZControl
 {
 public:
+	HWND hWnd;
 	int X;
 	int Y;
 	int W;
@@ -12,4 +13,6 @@ public:
 	ZString Type;
 	UINT Style;
 	HMENU ID;
+
+	virtual void Create(HWND hWnd) = 0;
 };

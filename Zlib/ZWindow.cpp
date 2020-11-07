@@ -29,31 +29,22 @@ void ZWindow::ZStartLoop()
 	}
 }
 
-int ZWindow::ZAddControl(ZControl ctrl)
+void ZWindow::ZAddControl(ZControl* ctrl)
 {
-	HWND hWnd = CreateWindow(ctrl.Type,
-		ctrl.Text,
-		ctrl.Style,
-		ctrl.X,
-		ctrl.Y,
-		ctrl.W,
-		ctrl.H,
-		this->hWnd,
-		ctrl.ID,
-		(HINSTANCE)GetWindowLong(this->hWnd, -6),
-		NULL);
-
-	if(hWnd == NULL)
-	{
-		return -1;
-	}
-	else
-	{
-		return 0;
-	}
+	ctrl->Create(this->hWnd);
 }
 
-int ZWindow::ZRegisterClassZ()
+void ZWindow::ZRemoveControl(ZControl* ctrl)
+{
+	DestroyWindow(ctrl->hWnd);
+}
+
+void ZWindow::ZRenoveControl(HWND hWnd)
+{
+	DestroyWindow(hWnd);
+}
+
+int ZWindow::ZRegisterClass()
 {
 	// ≥ı ºªØ WindowClass
 	WNDCLASSEX wcex;
@@ -113,5 +104,5 @@ void ZWindow::ZCreateWindow()
 
 void ZWindow::ZInit()
 {
-	ZRegisterClassZ();
+	ZRegisterClass();
 }
