@@ -1,4 +1,4 @@
-#include "Window.h"
+#include "ZWindow.h"
 
 ZWindow::~ZWindow()
 {
@@ -8,7 +8,52 @@ ZWindow::~ZWindow()
 	}
 }
 
-int ZWindow::ZRegisterClassZ() 
+HWND ZWindow::ZGetHandle()
+{
+	return this->hWnd;
+}
+
+void ZWindow::ZStartLoop()
+{
+	// 显示窗口
+	ShowWindow(hWnd, SW_SHOWNORMAL);
+
+	// 更新窗口
+	UpdateWindow(hWnd);
+
+	MSG msg;
+	while (GetMessage(&msg, NULL, 0, 0))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+}
+
+int ZWindow::ZAddControl(ZControl ctrl)
+{
+	HWND hWnd = CreateWindow(ctrl.Type,
+		ctrl.Text,
+		ctrl.Style,
+		ctrl.X,
+		ctrl.Y,
+		ctrl.W,
+		ctrl.H,
+		this->hWnd,
+		ctrl.ID,
+		(HINSTANCE)GetWindowLong(this->hWnd, -6),
+		NULL);
+
+	if(hWnd == NULL)
+	{
+		return -1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int ZWindow::ZRegisterClassZ()
 {
 	// 初始化 WindowClass
 	WNDCLASSEX wcex;
@@ -64,23 +109,9 @@ void ZWindow::ZCreateWindow()
 		MessageBox(NULL, L"创建窗口失败", L"错误", MB_OK);
 		return;
 	}
-
-	// 显示窗口
-	ShowWindow(hWnd, SW_SHOWNORMAL);
-
-	// 更新窗口
-	UpdateWindow(hWnd);
-
-	MSG msg;
-	while (GetMessage(&msg, NULL, 0, 0))
-	{
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
-	}
 }
 
-void ZWindow::ZInit(ZWindowInfo Info)
+void ZWindow::ZInit()
 {
-	this->Info = Info;
 	ZRegisterClassZ();
 }

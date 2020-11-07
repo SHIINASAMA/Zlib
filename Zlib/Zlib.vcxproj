@@ -140,12 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="ZControl.h" />
+    <ClInclude Include="ZWindow.h" />
     <ClInclude Include="ZString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="ZControl.cpp" />
+    <ClCompile Include="ZWindow.cpp" />
     <ClCompile Include="ZString.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

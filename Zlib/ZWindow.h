@@ -1,6 +1,6 @@
 #pragma once
 #include <Windows.h>
-#include "ZString.h"
+#include "ZControl.h"
 
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 
@@ -26,17 +26,28 @@ class ZWindow
 {
 	HWND hWnd;
 	HINSTANCE hInstance;
-	ZWindowInfo Info;
 
 public:
+	// 窗口信息
+	ZWindowInfo Info;
+
 	// 构造函数
 	~ZWindow();
 
 	// 初始化函数
-	void ZInit(ZWindowInfo Info);
+	void ZInit();
 
 	// 创建窗口
 	void ZCreateWindow();
+
+	// 获取窗口句柄
+	HWND ZGetHandle();
+
+	// 开始消息循环
+	void ZStartLoop();
+
+	// 添加控件
+	int ZAddControl(ZControl ctrl);
 
 private:
 	// 注册窗口
