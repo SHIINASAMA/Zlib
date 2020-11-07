@@ -1,18 +1,28 @@
 #include "ZString.h"
 
-ZString ZA2Z(AString str)
+void ZString::Pause(WString str)
+{
+	this->str = str;
+}
+
+void ZString::Pause(AString str)
 {
 	int nLen = MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str, -1, NULL, 0);
 	if (nLen == 0)
 	{
-		return NULL;
+		return;
 	}
 	wchar_t* pResult = new wchar_t[nLen];
 	MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str, -1, pResult, nLen);
-	return pResult;
+	this->str =  pResult;
 }
 
-AString ZZ2A(ZString str)
+WString ZString::ToWString()
+{
+	return this->str;
+}
+
+AString ZString::ToAString()
 {
 	int nLen = WideCharToMultiByte(CP_ACP, 0, str, -1, NULL, 0, NULL, NULL);
 	if (nLen == 0)
@@ -24,8 +34,33 @@ AString ZZ2A(ZString str)
 	return pResult;
 }
 
-int ZStrLen(ZString str)
+void ZString::operator=(WString str)
 {
+	this->str = str;
+}
+
+ZString::operator WString()
+{
+	return this->str;
+}
+
+WChar ZString::operator[](int index)
+{
+	WString str = this->str;
+	str += index;
+	WChar c = *str;
+	return c;
+}
+
+//void ZString::operator=(AString str)
+//{
+//	Pause(str);
+//}
+
+int ZString::Len()
+{
+	WString str = this->str;
+
 	int len = 0;
 	while(*str++)
 	{

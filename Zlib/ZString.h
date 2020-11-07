@@ -1,13 +1,23 @@
 #pragma once
 #include <Windows.h>
 #include <cassert>
-#define ZString LPCWSTR
-#define ZChar wchar_t
+#define WString LPCWSTR
+#define WChar wchar_t
 #define AString char*
 #define AChar char
 
-ZString ZA2Z(AString str);
+class ZString {
+public:
+	void Pause(WString str);
+	void Pause(AString str);
+	WString ToWString();
+	AString ToAString();
+	int Len();
 
-AString ZZ2A(ZString str);
-
-int ZStrLen(ZString str);
+	void operator=(WString str);
+	//void operator=(AString str);
+	operator WString();
+	WChar operator[](int index);
+private:
+	WString str;
+};
