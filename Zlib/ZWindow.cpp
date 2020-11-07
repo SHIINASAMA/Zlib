@@ -120,6 +120,7 @@ void ZWindow::ZCreateWindow()
 
 void ZWindow::ZInit()
 {
+	//MyProc = Info.WndProc;
 	ZRegisterClass();
 	ZCreateWindow();
 }

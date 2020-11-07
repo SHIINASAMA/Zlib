@@ -4,15 +4,19 @@
 
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 
+typedef void (*AppProc)(HWND, WPARAM, LPARAM);
+
 typedef struct ZWindowInfo {
 	int X;
 	int Y;
 	int W;
 	int H;
-	
+
+	// 字符类
 	ZString ClassName;
 	ZString Title;
 
+	// 资源类
 	HICON Icon = NULL;
 	HICON IconSm = NULL;
 	HCURSOR Cursor = NULL;
@@ -22,10 +26,15 @@ typedef struct ZWindowInfo {
 	WNDPROC WndProc;
 }ZWindowInfo;
 
+static AppProc MyProc;
+
 class ZWindow
 {
+	// 窗口句柄
 	HWND hWnd;
 	HINSTANCE hInstance;
+
+	// 转发到的函数指针
 
 public:
 	// 窗口信息
