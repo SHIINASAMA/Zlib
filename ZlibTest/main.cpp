@@ -1,9 +1,8 @@
 #include "../Zlib/ZWindow.h"
-#include "../Zlib/ZButton.h"
-#include "../Zlib/ZIcon.h"
+#include "../Zlib/ZPictureBox.h"
 
 ZWindow Win;
-ZControl* Button = new ZButton;
+ZPictureBox* C = new ZPictureBox;
 
 LRESULT CALLBACK WndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
 {
@@ -22,6 +21,26 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
+	case WM_PAINT: 
+	{
+		HDC hdcmem;
+		HBITMAP hbmp;
+		BITMAP bmp;
+
+		PAINTSTRUCT ps;
+		HDC hdc = BeginPaint(Win.ZGetHandle(), &ps);
+		hdcmem = CreateCompatibleDC(hdc);
+		hbmp = (HBITMAP)LoadImage(NULL, L"C:\\Users\\kaoru\\Desktop\\b.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
+
+		GetObject(hbmp, sizeof(bmp), &bmp);
+		SelectObject(hdcmem, hbmp);
+		BitBlt(hdc, 0, 0, bmp.bmWidth, bmp.bmHeight, hdcmem, 0, 0, SRCCOPY);
+
+		DeleteObject(hbmp);
+		DeleteDC(hdcmem);
+		EndPaint(Win.ZGetHandle(), &ps);
+		break; 
+	}
 	default:
 		break;
 	}
@@ -31,7 +50,7 @@ LRESULT CALLBACK WndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
 int main()
 {
 	Win.Info.X = 100;
-	Win.Info.Y = 100; 
+	Win.Info.Y = 100;
 	Win.Info.W = 300;
 	Win.Info.H = 240;
 	Win.Info.ClassName = L"TestApp";
@@ -39,13 +58,13 @@ int main()
 	Win.Info.WndProc = WndProc;
 	Win.ZInit();
 
-	Button->X = 10;
-	Button->Y = 10;
-	Button->W = 80;
-	Button->H = 30;
-	Button->Text = L"Click Me";
-	Button->ID = 0;
-	Win.ZAddControl(Button);
+	C->X = 10;
+	C->Y = 10;
+	C->W = 200;
+	C->H = 180;
+	C->ID = 0;
+	//C->SetImage(bmp);
+	Win.ZAddControl(C);
 
 	Win.ZStartLoop();
 }

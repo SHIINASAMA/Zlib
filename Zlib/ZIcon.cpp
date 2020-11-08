@@ -17,3 +17,8 @@ void ZIcon::LoadResource(ZString path)
 		LR_LOADFROMFILE
 	);
 }
+
+HICON ZIcon::GetHandle()
+{
+	return this->icon;
+}

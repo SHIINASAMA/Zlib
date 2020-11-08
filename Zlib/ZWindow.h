@@ -34,8 +34,6 @@ class ZWindow
 	HWND hWnd;
 	HINSTANCE hInstance;
 
-	// 转发到的函数指针
-
 public:
 	// 窗口信息
 	ZWindowInfo Info;

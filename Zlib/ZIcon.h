@@ -7,5 +7,6 @@ class ZIcon : public ZImage
 public:
 	operator HICON();
 	void LoadResource(ZString path);
+	HICON GetHandle();
 };
 

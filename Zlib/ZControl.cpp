@@ -2,7 +2,8 @@
 
 void ZControl::Create(HWND hWnd)
 {
-	this->hWnd = CreateWindow(Type,
+	this->hWnd = CreateWindow(
+		Type,
 		Text,
 		Style,
 		X,
