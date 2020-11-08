@@ -145,6 +145,8 @@
     <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZEdit.h" />
     <ClInclude Include="ZControl.h" />
+    <ClInclude Include="ZIcon.h" />
+    <ClInclude Include="ZImage.h" />
     <ClInclude Include="ZStatic.h" />
     <ClInclude Include="ZWindow.h" />
     <ClInclude Include="ZString.h" />
@@ -153,6 +155,8 @@
     <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZEdit.cpp" />
     <ClCompile Include="ZControl.cpp" />
+    <ClCompile Include="ZIcon.cpp" />
+    <ClCompile Include="ZImage.cpp" />
     <ClCompile Include="ZStatic.cpp" />
     <ClCompile Include="ZWindow.cpp" />
     <ClCompile Include="ZString.cpp" />

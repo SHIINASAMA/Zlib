@@ -16,7 +16,7 @@ void ZStatic::Create(HWND hWnd)
 		W,
 		H,
 		hWnd,
-		ID,
+		(HMENU)ID,
 		(HINSTANCE)GetWindowLong(hWnd, -6),
 		NULL
 	);

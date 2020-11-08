@@ -12,7 +12,7 @@ public:
 	ZString Text;
 	ZString Type;
 	UINT Style;
-	HMENU ID;
+	UINT ID;
 
 	ZString GetText();
 	void SetText(ZString str);
