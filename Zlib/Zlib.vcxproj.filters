@@ -33,14 +33,8 @@
     <ClInclude Include="ZEdit.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ZString.cpp">
       <Filter>源文件</Filter>
     </ClCompile>

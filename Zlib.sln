@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Zlib", "Zlib\Zlib.vcxproj", "{AA162A07-801A-4B4E-811D-25711575E69E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ZlibTest", "ZlibTest\ZlibTest.vcxproj", "{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{AA162A07-801A-4B4E-811D-25711575E69E}.Release|x64.Build.0 = Release|x64
 		{AA162A07-801A-4B4E-811D-25711575E69E}.Release|x86.ActiveCfg = Release|Win32
 		{AA162A07-801A-4B4E-811D-25711575E69E}.Release|x86.Build.0 = Release|Win32
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Debug|x64.ActiveCfg = Debug|x64
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Debug|x64.Build.0 = Debug|x64
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Debug|x86.Build.0 = Debug|Win32
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Release|x64.ActiveCfg = Release|x64
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Release|x64.Build.0 = Release|x64
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Release|x86.ActiveCfg = Release|Win32
+		{C587D905-2ED7-4111-BB62-E71E4C9DF9DC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{aa162a07-801a-4b4e-811d-25711575e69e}</ProjectGuid>
-    <RootNamespace>Zlib</RootNamespace>
+    <ProjectGuid>{c587d905-2ed7-4111-bb62-e71e4c9df9dc}</ProjectGuid>
+    <RootNamespace>ZlibTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -116,9 +116,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <CallingConvention>Cdecl</CallingConvention>
-      <CompileAs>Default</CompileAs>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -142,20 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ZButton.h" />
-    <ClInclude Include="ZEdit.h" />
-    <ClInclude Include="ZIControl.h" />
-    <ClInclude Include="ZStatic.h" />
-    <ClInclude Include="ZWindow.h" />
-    <ClInclude Include="ZString.h" />
+    <ProjectReference Include="..\Zlib\Zlib.vcxproj">
+      <Project>{aa162a07-801a-4b4e-811d-25711575e69e}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ZButton.cpp" />
-    <ClCompile Include="ZEdit.cpp" />
-    <ClCompile Include="ZIControl.cpp" />
-    <ClCompile Include="ZStatic.cpp" />
-    <ClCompile Include="ZWindow.cpp" />
-    <ClCompile Include="ZString.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
