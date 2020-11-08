@@ -1,6 +1,6 @@
 #pragma once
 #include <Windows.h>
-#include "ZIControl.h"
+#include "ZControl.h"
 
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
 
@@ -53,10 +53,10 @@ public:
 	void ZStartLoop();
 
 	// 添加控件
-	void ZAddControl(ZIControl* ctrl);
+	void ZAddControl(ZControl* ctrl);
 
 	// 移除控件
-	void ZRemoveControl(ZIControl* ctrl);
+	void ZRemoveControl(ZControl* ctrl);
 
 	void ZRenoveControl(HWND hWnd);
 
@@ -66,7 +66,7 @@ public:
 	// 设置文本
 	void SetText(ZString str);
 
-private:
+protected:
 	// 注册窗口
 	int ZRegisterClass();
 
@@ -75,4 +75,7 @@ private:
 
 	// 初始化Instance句柄
 	void ZInitInstance();
+
+	// 初始化字体
+	void ChangeFont();
 };

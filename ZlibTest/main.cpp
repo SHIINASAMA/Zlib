@@ -2,7 +2,7 @@
 #include "../Zlib/ZButton.h"
 
 ZWindow Win;
-ZIControl* Button = new ZButton;
+ZControl* Button = new ZButton;
 
 LRESULT CALLBACK WndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
 {

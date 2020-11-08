@@ -29,12 +29,12 @@ void ZWindow::ZStartLoop()
 	}
 }
 
-void ZWindow::ZAddControl(ZIControl* ctrl)
+void ZWindow::ZAddControl(ZControl* ctrl)
 {
 	ctrl->Create(this->hWnd);
 }
 
-void ZWindow::ZRemoveControl(ZIControl* ctrl)
+void ZWindow::ZRemoveControl(ZControl* ctrl)
 {
 	DestroyWindow(ctrl->hWnd);
 }
@@ -93,6 +93,14 @@ void ZWindow::ZInitInstance()
 	hInstance = ::GetModuleHandle(NULL);
 }
 
+void ZWindow::ChangeFont()
+{
+	HFONT hFont = CreateFont(12, 0, 0, 0, 0, 0, 0, 0,
+		GB2312_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+		DEFAULT_QUALITY, DEFAULT_PITCH, L"新宋体");
+	SendMessage(hWnd, WM_SETFONT, (WPARAM)hFont, 0);
+}
+
 void ZWindow::ZCreateWindow()
 {
 	// 创建窗口
@@ -120,7 +128,6 @@ void ZWindow::ZCreateWindow()
 
 void ZWindow::ZInit()
 {
-	//MyProc = Info.WndProc;
 	ZRegisterClass();
 	ZCreateWindow();
 }

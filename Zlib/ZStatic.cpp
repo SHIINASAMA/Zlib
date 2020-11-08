@@ -20,4 +20,5 @@ void ZStatic::Create(HWND hWnd)
 		(HINSTANCE)GetWindowLong(hWnd, -6),
 		NULL
 	);
+	ChangeFont();
 }

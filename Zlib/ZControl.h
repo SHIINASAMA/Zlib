@@ -1,7 +1,7 @@
 #pragma once
 #include "ZString.h"
 
-class ZIControl
+class ZControl
 {
 public:
 	HWND hWnd;
@@ -14,7 +14,10 @@ public:
 	UINT Style;
 	HMENU ID;
 
-	virtual void Create(HWND hWnd) = 0;
 	ZString GetText();
 	void SetText(ZString str);
+	void Create(HWND hWnd);
+
+protected:
+	void ChangeFont();
 };

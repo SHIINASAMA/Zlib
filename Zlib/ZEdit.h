@@ -1,7 +1,7 @@
 #pragma once
-#include "ZIControl.h"
+#include "ZControl.h"
 
-class ZEdit : public ZIControl
+class ZEdit : public ZControl
 {
 public:
 	ZEdit();

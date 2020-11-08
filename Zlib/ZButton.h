@@ -1,9 +1,10 @@
 #pragma once
-#include "ZIControl.h"
+#include "ZControl.h"
 
-class ZButton : public ZIControl
+class ZButton : public ZControl
 {
 public:
 	ZButton();
+private:
 	void Create(HWND hWnd);
 };

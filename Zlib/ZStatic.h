@@ -1,7 +1,7 @@
 #pragma once
-#include "ZIControl.h"
+#include "ZControl.h"
 
-class ZStatic :public ZIControl {
+class ZStatic :public ZControl {
 public:
 	ZStatic();
 	void Create(HWND hWnd);
