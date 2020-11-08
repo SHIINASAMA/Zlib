@@ -1,23 +1,37 @@
 #pragma once
-#include "ZString.h"
+#include <Windows.h>
+#include "ZGraphics.h"
+#include "ZFont.h"
 
 class ZControl
 {
-public:
+protected:
 	HWND hWnd;
-	int X;
-	int Y;
-	int W;
-	int H;
+	HINSTANCE hInstance;
+	WNDCLASSEX wcex;
+
+	ZString ClassName;
 	ZString Text;
-	ZString Type;
 	UINT Style;
-	UINT ID;
+	ZRect Rect;
+	ZFont Font;
+
+	void RegClass();
+	void Init();
+	void StartLoop();
+
+public:
+	ZControl();
+
+	ZString GetClassName();
 
 	ZString GetText();
 	void SetText(ZString str);
-	void Create(HWND hWnd);
 
-protected:
-	void ChangeFont();
+	ZFont GetFont();
+	void SetFont(ZFont Font);
+
+	ZRect GetPosition();
+	void SetPosition(ZRect Rect);
 };
+

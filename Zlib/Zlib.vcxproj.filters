@@ -12,68 +12,47 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Base\Graphics">
+      <UniqueIdentifier>{b3f359c3-21dd-456b-9b69-8101679fa171}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ZString.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="ZWindow.h">
-      <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="ZButton.h">
-      <Filter>Control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZEdit.h">
-      <Filter>Control</Filter>
-    </ClInclude>
     <ClInclude Include="ZControl.h">
       <Filter>Control</Filter>
     </ClInclude>
-    <ClInclude Include="ZStatic.h">
-      <Filter>Control</Filter>
+    <ClInclude Include="ZPoint.h">
+      <Filter>Base\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="ZIcon.h">
+    <ClInclude Include="ZRect.h">
+      <Filter>Base\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ZGraphics.h">
       <Filter>Base</Filter>
     </ClInclude>
-    <ClInclude Include="ZImage.h">
-      <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="ZPictureBox.h">
-      <Filter>Control</Filter>
-    </ClInclude>
-    <ClInclude Include="ZBitmap.h">
+    <ClInclude Include="ZFont.h">
       <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ZEdit.cpp">
-      <Filter>Control</Filter>
-    </ClCompile>
-    <ClCompile Include="ZButton.cpp">
-      <Filter>Control</Filter>
+    <ClCompile Include="ZString.cpp">
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="ZControl.cpp">
       <Filter>Control</Filter>
     </ClCompile>
-    <ClCompile Include="ZStatic.cpp">
-      <Filter>Control</Filter>
+    <ClCompile Include="ZPoint.cpp">
+      <Filter>Base\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="ZWindow.cpp">
+    <ClCompile Include="ZRect.cpp">
+      <Filter>Base\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ZGraphics.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="ZString.cpp">
-      <Filter>Base</Filter>
-    </ClCompile>
-    <ClCompile Include="ZIcon.cpp">
-      <Filter>Base</Filter>
-    </ClCompile>
-    <ClCompile Include="ZImage.cpp">
-      <Filter>Base</Filter>
-    </ClCompile>
-    <ClCompile Include="ZPictureBox.cpp">
-      <Filter>Control</Filter>
-    </ClCompile>
-    <ClCompile Include="ZBitmap.cpp">
+    <ClCompile Include="ZFont.cpp">
       <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>

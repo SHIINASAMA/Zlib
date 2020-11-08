@@ -1,29 +1,59 @@
 #include "ZControl.h"
 
-void ZControl::Create(HWND hWnd)
+void ZControl::RegClass()
 {
-	this->hWnd = CreateWindow(
-		Type,
+	wcex.style = CS_HREDRAW | CS_VREDRAW;
+	RegisterClassEx(&wcex);
+}
+
+void ZControl::Init()
+{
+	hInstance = GetModuleHandle(NULL);
+	hWnd = CreateWindow(
+		ClassName,
 		Text,
 		Style,
-		X,
-		Y,
-		W,
-		H,
-		hWnd,
-		(HMENU)ID,
-		(HINSTANCE)GetWindowLong(hWnd, -6),
+		Rect.A.X,
+		Rect.A.Y,
+		Rect.B.X - Rect.A.X,
+		Rect.B.Y - Rect.B.Y,
+		NULL,
+		NULL,
+		hInstance,
 		NULL
 	);
-	this->ChangeFont();
+
+	Font.Create(L"新宋体");
+	SetFont(Font);
+}
+
+void ZControl::StartLoop()
+{
+	ShowWindow(hWnd, SW_SHOWNORMAL);
+	UpdateWindow(hWnd);
+	MSG msg;
+	while(GetMessage(&msg,NULL,0,0))
+	{
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+}
+
+ZControl::ZControl()
+{
+}
+
+ZString ZControl::GetClassName()
+{
+	return this->ClassName;
 }
 
 ZString ZControl::GetText()
 {
 	UINT len = GetWindowTextLengthW(this->hWnd);
-	WChar *str = new WChar[len+1];
-	GetWindowTextW(this->hWnd, str, len+1);
-	str[len] = '\0';
+	WChar* str = new WChar[len + 1];
+	GetWindowTextW(this->hWnd, str, len + 1);
+	str[len] = L'\0';
 	ZString temp;
 	temp.Pause(str);
 	return temp;
@@ -31,13 +61,30 @@ ZString ZControl::GetText()
 
 void ZControl::SetText(ZString str)
 {
-	SetWindowText(this->hWnd, str);
+	SetWindowTextW(this->hWnd, str);
 }
 
-void ZControl::ChangeFont()
+ZFont ZControl::GetFont()
 {
-	HFONT hFont = CreateFont(12, 0, 0, 0, 0, 0, 0, 0,
-		GB2312_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
-		DEFAULT_QUALITY, DEFAULT_PITCH, L"新宋体");
-	SendMessage(hWnd, WM_SETFONT, (WPARAM)hFont, 0);
+	return this->Font;
+}
+
+void ZControl::SetFont(ZFont Font)
+{
+	this->Font = Font;
+	SendMessage(hWnd, WM_SETFONT, (WPARAM)(HFONT)Font, 0);
+}
+
+ZRect ZControl::GetPosition()
+{
+	RECT rect;
+	GetWindowRect(hWnd, &rect);
+	return *new ZRect(rect.left, rect.top, rect.right, rect.bottom);
+}
+
+void ZControl::SetPosition(ZRect Rect)
+{
+	MoveWindow(
+		hWnd, Rect.A.X, Rect.A.Y,
+		Rect.B.X - Rect.A.X, Rect.B.Y - Rect.A.Y,TRUE);
 }

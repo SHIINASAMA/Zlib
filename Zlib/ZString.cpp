@@ -28,7 +28,7 @@ void ZString::Pause(AString str)
 	}
 	wchar_t* pResult = new wchar_t[nLen];
 	MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, str, -1, pResult, nLen);
-	this->str =  pResult;
+	this->str = pResult;
 }
 
 WString ZString::ToWString()
@@ -46,6 +46,17 @@ AString ZString::ToAString()
 	char* pResult = new char[nLen];
 	WideCharToMultiByte(CP_ACP, 0, str, -1, pResult, nLen, NULL, NULL);
 	return pResult;
+}
+
+int ZString::Len()
+{
+	WString str = this->str;
+	int len = 0;
+	while (*str++)
+	{
+		len++;
+	}
+	return len;
 }
 
 void ZString::operator=(WString str)
@@ -69,21 +80,4 @@ WChar ZString::operator[](int index)
 	str += index;
 	WChar c = *str;
 	return c;
-}
-
-//void ZString::operator=(AString str)
-//{
-//	Pause(str);
-//}
-
-int ZString::Len()
-{
-	WString str = this->str;
-
-	int len = 0;
-	while(*str++)
-	{
-		len++;
-	}
-	return len;
 }
