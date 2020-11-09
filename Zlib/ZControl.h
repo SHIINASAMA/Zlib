@@ -14,6 +14,7 @@ protected:
 	ZString Text;
 	UINT Style;
 	ZRect Rect;
+
 	ZFont Font;
 
 	void RegClass();
