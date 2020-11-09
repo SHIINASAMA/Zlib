@@ -14,4 +14,5 @@ void ZFont::CreateEx(int cHeight, int cWidth, int cEscapement, int cOrientation,
 
 ZFont::operator HFONT()
 {
+	return this->font;
 }

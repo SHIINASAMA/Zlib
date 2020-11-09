@@ -2,13 +2,12 @@
 
 void ZControl::RegClass()
 {
-	wcex.style = CS_HREDRAW | CS_VREDRAW;
+	hInstance = GetModuleHandle(NULL);
 	RegisterClassEx(&wcex);
 }
 
 void ZControl::Init()
 {
-	hInstance = GetModuleHandle(NULL);
 	hWnd = CreateWindow(
 		ClassName,
 		Text,
@@ -16,7 +15,7 @@ void ZControl::Init()
 		Rect.A.X,
 		Rect.A.Y,
 		Rect.B.X - Rect.A.X,
-		Rect.B.Y - Rect.B.Y,
+		Rect.B.Y - Rect.A.Y,
 		NULL,
 		NULL,
 		hInstance,

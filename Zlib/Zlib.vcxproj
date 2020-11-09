@@ -23,18 +23,24 @@
     <ClInclude Include="ZFont.h" />
     <ClInclude Include="ZGraphics.h" />
     <ClInclude Include="ZControl.h" />
+    <ClInclude Include="ZIcon.h" />
+    <ClInclude Include="ZImage.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRect.h" />
     <ClInclude Include="ZString.h" />
+    <ClInclude Include="ZWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZFont.cpp" />
     <ClCompile Include="ZGraphics.cpp" />
     <ClCompile Include="ZControl.cpp" />
+    <ClCompile Include="ZIcon.cpp" />
+    <ClCompile Include="ZImage.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZString.cpp" />
+    <ClCompile Include="ZWindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
