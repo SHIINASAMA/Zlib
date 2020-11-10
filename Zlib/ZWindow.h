@@ -10,8 +10,8 @@ protected:
 	void StartLoop();
 
 public:
-	ZWindow(ZString Text,ZString Name,ZRect Rect,WNDPROC WndProc);
-	ZWindow(ZString Text, ZRect Rect, UINT Style, WNDCLASSEX wcex);
+	ZWindow(ZString Text,ZString Name,int X,int Y,int W,int H,WNDPROC WndProc);
+	ZWindow(ZString Text, int X, int Y, int W, int H, UINT Style, WNDCLASSEX wcex);
 	~ZWindow();
 
 	void Init(HWND hWnd);

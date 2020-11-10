@@ -50,6 +50,9 @@
     <ClInclude Include="ZRect.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="ZButton.h">
+      <Filter>Control</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZString.cpp">
@@ -87,6 +90,9 @@
     </ClCompile>
     <ClCompile Include="ZSize.cpp">
       <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ZButton.cpp">
+      <Filter>Control</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

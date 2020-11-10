@@ -2,8 +2,9 @@
 #include "ZControl.h"
 class ZStatic : public ZControl
 {
-private:
-	ZString Type;
+protected:
+	ZString Type = L"static";
+	DWORD Style = WS_CHILD | WS_VISIBLE;
 
 public:
 	ZStatic();

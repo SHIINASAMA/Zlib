@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZColor.h" />
     <ClInclude Include="ZFont.h" />
     <ClInclude Include="ZGraphics.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="ZWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZFont.cpp" />
     <ClCompile Include="ZGraphics.cpp" />

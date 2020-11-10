@@ -12,8 +12,9 @@ protected:
 
 	ZString ClassName;
 	ZString Text;
-	UINT Style;
-	UINT ID;
+	ZString Type;
+	DWORD Style;
+	DWORDLONG ID;
 	ZRect Rect;
 	ZFont Font;
 
@@ -35,5 +36,8 @@ public:
 
 	ZRect GetPosition();
 	void SetPosition(ZRect Rect);
+
+	ZSize GetSize();
+	void Size(ZSize Size);
 };
 

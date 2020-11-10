@@ -1,16 +1,16 @@
-#include "ZStatic.h"
+#include "ZButton.h"
 
-ZStatic::ZStatic()
+ZButton::ZButton()
 {
 }
 
-ZStatic::ZStatic(ZString Text, ZRect Rect)
+ZButton::ZButton(ZString Text, ZRect Rect, DWORD ID)
 {
 	this->Text = Text;
 	this->Rect = Rect;
 }
 
-ZStatic::ZStatic(ZString Text, int X, int Y, int W, int H)
+ZButton::ZButton(ZString Text, int X, int Y, int W, int H, DWORD ID)
 {
 	this->Text = Text;
 	ZRect Rect;
@@ -20,7 +20,7 @@ ZStatic::ZStatic(ZString Text, int X, int Y, int W, int H)
 	this->Rect = Rect;
 }
 
-void ZStatic::Init(HWND hWnd)
+void ZButton::Init(HWND hWnd)
 {
 	this->hWnd = CreateWindow(
 		Type,
@@ -32,7 +32,7 @@ void ZStatic::Init(HWND hWnd)
 		Rect.GetSize().H,
 		hWnd,
 		(HMENU)ID,
-		(HINSTANCE)GetWindowLong(hWnd, -6),
+		(HINSTANCE)GetWindowLong(hWnd,-6),
 		NULL
 	);
 

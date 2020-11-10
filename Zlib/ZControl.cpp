@@ -14,15 +14,15 @@ void ZControl::Init(HWND hWnd)
 		Style,
 		Rect.A.X,
 		Rect.A.Y,
-		Rect.B.X - Rect.A.X,
-		Rect.B.Y - Rect.A.Y,
+		Rect.GetSize().W,
+		Rect.GetSize().H,
 		NULL,
 		(HMENU)ID,
 		hInstance,
 		NULL
 	);
 
-	Font.Create(L"ÐÂËÎÌå");
+	Font.Create(L"ËÎÌå");
 	SetFont(Font);
 }
 
@@ -78,12 +78,30 @@ ZRect ZControl::GetPosition()
 {
 	RECT rect;
 	GetWindowRect(hWnd, &rect);
-	return *new ZRect(rect.left, rect.top, rect.right, rect.bottom);
+	return ZRect(rect.left, rect.top, rect.right, rect.bottom);
 }
 
 void ZControl::SetPosition(ZRect Rect)
 {
 	MoveWindow(
 		hWnd, Rect.A.X, Rect.A.Y,
-		Rect.B.X - Rect.A.X, Rect.B.Y - Rect.A.Y,TRUE);
+		Rect.B.X - Rect.A.X, 
+		Rect.B.Y - Rect.A.Y,
+		TRUE
+	);
+}
+
+ZSize ZControl::GetSize()
+{
+	return Rect.GetSize();
+}
+
+void ZControl::Size(ZSize Size)
+{
+	MoveWindow(
+		hWnd, Rect.A.X, Rect.A.Y,
+		Rect.A.X + Size.W,
+		Rect.A.Y + Size.H,
+		TRUE
+	);
 }
