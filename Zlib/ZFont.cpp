@@ -2,7 +2,7 @@
 
 void ZFont::Create(ZString FontName)
 {
-	this->font = CreateFont(18, 0, 0, 0, 0, 0, 0, 0,
+	this->font = CreateFont(15, 0, 0, 0, 0, 0, 0, 0,
 		GB2312_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
 		DEFAULT_QUALITY, DEFAULT_PITCH, FontName);
 }
