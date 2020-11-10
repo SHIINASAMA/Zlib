@@ -13,16 +13,17 @@ protected:
 	ZString ClassName;
 	ZString Text;
 	UINT Style;
+	UINT ID;
 	ZRect Rect;
-
 	ZFont Font;
 
 	void RegClass();
-	void Init();
 	void StartLoop();
 
 public:
 	ZControl();
+
+	virtual void Init(HWND hWnd);
 
 	ZString GetClassName();
 

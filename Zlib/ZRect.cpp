@@ -17,3 +17,16 @@ ZRect::ZRect(int X1, int Y1, int X2, int Y2)
 	this->A = A;
 	this->B = B;
 }
+
+ZSize ZRect::GetSize()
+{
+	int W = B.X - A.X;
+	int H = B.Y - A.Y;
+	return ZSize(W, H);
+}
+
+void ZRect::SetSize(ZSize Size)
+{
+	B.X = A.X + Size.W;
+	B.Y = A.Y + Size.H;
+}

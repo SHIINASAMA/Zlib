@@ -2,14 +2,27 @@
 
 void ZWindow::RegClass()
 {
-	int a = 0;
-	if (!RegisterClassEx(&wcex))
-		a = 1;
+	RegisterClassEx(&wcex);
 }
 
-void ZWindow::Init()
+void ZWindow::Init(HWND hWnd)
 {
-	ZControl::Init();
+	this->hWnd = ::CreateWindow(
+		ClassName,
+		Text,
+		Style,
+		Rect.A.X,
+		Rect.A.Y,
+		Rect.GetSize().W,
+		Rect.GetSize().H,
+		NULL,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	Font.Create(L"新宋体");
+	SetFont(Font);
 }
 
 void ZWindow::StartLoop()
@@ -50,10 +63,14 @@ ZWindow::ZWindow(ZString Text,ZRect Rect,UINT Style,WNDCLASSEX wcex)
 	this->Style = Style;
 }
 
-void ZWindow::InitWindow()
+void ZWindow::Create()
 {
 	RegClass();		//注册
-	Init();			//创建
+	Init(hWnd);		//创建
+}
+
+void ZWindow::Run()
+{
 	StartLoop();	//循环
 }
 
@@ -65,4 +82,14 @@ void ZWindow::SetIcon(ZIcon Icon)
 void ZWindow::SetIconEx(ZIcon Icon)
 {
 	SendMessage(hWnd,WM_SETICON,0,(LPARAM)(HICON)Icon);
+}
+
+void ZWindow::AddControl(ZControl* Con)
+{
+	Con->Init(hWnd);
+}
+
+void ZWindow::RemoveControl(HWND hWnd)
+{
+	DestroyWindow(hWnd);
 }

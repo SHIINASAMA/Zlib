@@ -6,9 +6,9 @@ void ZControl::RegClass()
 	RegisterClassEx(&wcex);
 }
 
-void ZControl::Init()
+void ZControl::Init(HWND hWnd)
 {
-	hWnd = CreateWindow(
+	this->hWnd = CreateWindow(
 		ClassName,
 		Text,
 		Style,
@@ -17,7 +17,7 @@ void ZControl::Init()
 		Rect.B.X - Rect.A.X,
 		Rect.B.Y - Rect.A.Y,
 		NULL,
-		NULL,
+		(HMENU)ID,
 		hInstance,
 		NULL
 	);

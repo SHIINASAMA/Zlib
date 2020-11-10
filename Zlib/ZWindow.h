@@ -7,7 +7,6 @@ class ZWindow : public ZControl
 {
 protected:
 	void RegClass();
-	void Init();
 	void StartLoop();
 
 public:
@@ -15,8 +14,15 @@ public:
 	ZWindow(ZString Text, ZRect Rect, UINT Style, WNDCLASSEX wcex);
 	~ZWindow();
 
-	void InitWindow();
+	void Init(HWND hWnd);
+
+	void Create();
+	void Run();
+
 	void SetIcon(ZIcon Icon);
 	void SetIconEx(ZIcon Icon);
+
+	void AddControl(ZControl* Con);
+	void RemoveControl(HWND hWnd);
 };
 
