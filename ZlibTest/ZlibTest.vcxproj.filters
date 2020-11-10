@@ -15,4 +15,9 @@
       <Filter>测试代码</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>测试代码</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
