@@ -27,6 +27,7 @@ public:
 	virtual void Init(HWND hWnd);
 
 	ZString GetClassName();
+	HWND GetHandle();
 
 	ZString GetText();
 	void SetText(ZString str);

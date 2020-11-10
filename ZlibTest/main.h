@@ -11,6 +11,8 @@ ZEdit* Edit;
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+
+	HDC hdc;
 	switch (uMsg)
 	{
 	case WM_COMMAND:
@@ -22,6 +24,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		default:
 			break;
 		}
+		break;
+	case WM_CTLCOLORSTATIC:
+		SetWindowLong(Label->GetHandle(), GWL_EXSTYLE, WS_EX_TRANSPARENT);
+		hdc = (HDC)wParam;
+		SetTextColor(hdc,RGB(0,0,0));
+		SetBkMode(hdc, TRANSPARENT);
+		return (LRESULT)GetStockObject(NULL_BRUSH);
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);

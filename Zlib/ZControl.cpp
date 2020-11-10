@@ -47,6 +47,11 @@ ZString ZControl::GetClassName()
 	return this->ClassName;
 }
 
+HWND ZControl::GetHandle()
+{
+	return this->hWnd;
+}
+
 ZString ZControl::GetText()
 {
 	UINT len = GetWindowTextLengthW(this->hWnd);
