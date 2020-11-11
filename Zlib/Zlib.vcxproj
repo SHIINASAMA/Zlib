@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ZBitmap.h" />
     <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZColor.h" />
     <ClInclude Include="ZEdit.h" />
@@ -27,6 +28,7 @@
     <ClInclude Include="ZControl.h" />
     <ClInclude Include="ZIcon.h" />
     <ClInclude Include="ZImage.h" />
+    <ClInclude Include="ZPictureBox.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZRect.h" />
     <ClInclude Include="ZSize.h" />
@@ -35,6 +37,7 @@
     <ClInclude Include="ZWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ZBitmap.cpp" />
     <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZEdit.cpp" />
@@ -43,6 +46,7 @@
     <ClCompile Include="ZControl.cpp" />
     <ClCompile Include="ZIcon.cpp" />
     <ClCompile Include="ZImage.cpp" />
+    <ClCompile Include="ZPictureBox.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />

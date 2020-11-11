@@ -9,8 +9,6 @@ ZEdit::ZEdit(ZString Text, ZRect Rect, DWORD ID)
 	this->Text = Text;
 	this->Rect = Rect;
 	this->ID = ID;
-	//if(Style != NULL)
-		//this->Style |= Style;
 }
 
 ZEdit::ZEdit(ZString Text, int X, int Y, int W, int H, DWORD ID)
@@ -37,7 +35,7 @@ void ZEdit::Init(HWND hWnd)
 		Rect.GetSize().H,
 		hWnd,
 		(HMENU)ID,
-		(HINSTANCE)GetWindowLong(hWnd,-6),
+		(HINSTANCE)GetWindowLong(hWnd, -6),
 		NULL
 	);
 

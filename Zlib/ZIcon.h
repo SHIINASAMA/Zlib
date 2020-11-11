@@ -10,4 +10,3 @@ public:
 
 	void LoadRes(ZString Path);
 };
-
