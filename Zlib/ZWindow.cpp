@@ -30,7 +30,7 @@ void ZWindow::StartLoop()
 	ZControl::StartLoop();
 }
 
-ZWindow::ZWindow(ZString Text, ZString Name, int X,int Y,int W,int H, WNDPROC WndProc)
+ZWindow::ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc)
 {
 	hInstance = ::GetModuleHandle(NULL);
 	wcex.cbSize = sizeof(WNDCLASSEX);
@@ -56,7 +56,7 @@ ZWindow::ZWindow(ZString Text, ZString Name, int X,int Y,int W,int H, WNDPROC Wn
 	this->Rect = Rect;
 }
 
-ZWindow::ZWindow(ZString Text, int X, int Y, int W, int H, UINT Style,WNDCLASSEX wcex)
+ZWindow::ZWindow(ZString Text, int X, int Y, int W, int H, UINT Style, WNDCLASSEX wcex)
 {
 	hInstance = ::GetModuleHandle(NULL);
 	wcex.hInstance = hInstance;
@@ -69,6 +69,14 @@ ZWindow::ZWindow(ZString Text, int X, int Y, int W, int H, UINT Style,WNDCLASSEX
 	Rect.A.Y = Y;
 	Rect.SetSize(ZSize(W, H));
 	this->Rect = Rect;
+}
+
+ZWindow::~ZWindow()
+{
+	if (this->hWnd != NULL && ::IsWindow(this->hWnd))
+	{
+		::DestroyWindow(hWnd);
+	}
 }
 
 void ZWindow::Create()
@@ -89,7 +97,7 @@ void ZWindow::SetIcon(ZIcon Icon)
 
 void ZWindow::SetIconEx(ZIcon Icon)
 {
-	SendMessage(hWnd,WM_SETICON,0,(LPARAM)(HICON)Icon);
+	SendMessage(hWnd, WM_SETICON, 0, (LPARAM)(HICON)Icon);
 }
 
 void ZWindow::AddControl(ZControl* Con)

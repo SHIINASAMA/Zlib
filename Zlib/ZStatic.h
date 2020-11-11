@@ -8,7 +8,9 @@ protected:
 
 public:
 	ZStatic();
+	//初始化 ZStatic 对象
 	ZStatic(ZString Text, ZRect Rect);
+	//初始化 ZStatic 对象
 	ZStatic(ZString Text, int X, int Y, int W, int H);
 	void Init(HWND hWnd);
 };

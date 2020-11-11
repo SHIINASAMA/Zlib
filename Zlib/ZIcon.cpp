@@ -16,7 +16,7 @@ void ZIcon::LoadRes(ZString Path)
 		NULL,
 		Path,
 		IMAGE_ICON,
-		0,0,
+		0, 0,
 		LR_DEFAULTCOLOR |
 		LR_CREATEDIBSECTION |
 		LR_LOADFROMFILE

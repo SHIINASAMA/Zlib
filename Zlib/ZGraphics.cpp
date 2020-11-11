@@ -3,7 +3,7 @@
 LRESULT ZGraphics::SetBkTransparent(BOOL IsTransparent, WPARAM wParam)
 {
 	HDC hdc = (HDC)wParam;
-	if (IsTransparent) 
+	if (IsTransparent)
 	{
 		SetBkMode(hdc, TRANSPARENT);
 	}

@@ -9,5 +9,6 @@ public:
 	int H = 0;
 
 	ZSize();
-	ZSize(int W,int Y);
+	//初始化一个 ZSize 对象
+	ZSize(int W, int Y);
 };

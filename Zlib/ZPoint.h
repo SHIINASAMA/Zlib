@@ -6,6 +6,6 @@ public:
 	int Y = 0;
 
 	ZPoint();
+	//实例化一个 ZPoint 对象
 	ZPoint(int X, int Y);
 };
-
