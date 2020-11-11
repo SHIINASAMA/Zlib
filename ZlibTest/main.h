@@ -26,11 +26,9 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		}
 		break;
 	case WM_CTLCOLORSTATIC:
-		SetWindowLong(Label->GetHandle(), GWL_EXSTYLE, WS_EX_TRANSPARENT);
-		hdc = (HDC)wParam;
-		SetTextColor(hdc,RGB(0,0,0));
-		SetBkMode(hdc, TRANSPARENT);
-		return (LRESULT)GetStockObject(NULL_BRUSH);
+		//SetWindowLong(Label->GetHandle(), GWL_EXSTYLE, WS_EX_TRANSPARENT);
+		//设置透明背景必要Style WS_EX_TRANSPARENT
+		return ZGraphics::SetBkTransparent(TRUE,wParam);
 		break;
 	case WM_DESTROY:
 		PostQuitMessage(0);
