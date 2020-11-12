@@ -30,6 +30,8 @@
     <ClInclude Include="ZImage.h" />
     <ClInclude Include="ZPictureBox.h" />
     <ClInclude Include="ZPoint.h" />
+    <ClInclude Include="ZProgressBar.h" />
+    <ClInclude Include="ZRange.h" />
     <ClInclude Include="ZRect.h" />
     <ClInclude Include="ZSize.h" />
     <ClInclude Include="ZStatic.h" />
@@ -48,6 +50,8 @@
     <ClCompile Include="ZImage.cpp" />
     <ClCompile Include="ZPictureBox.cpp" />
     <ClCompile Include="ZPoint.cpp" />
+    <ClCompile Include="ZProgressBar.cpp" />
+    <ClCompile Include="ZRange.cpp" />
     <ClCompile Include="ZRect.cpp" />
     <ClCompile Include="ZSize.cpp" />
     <ClCompile Include="ZStatic.cpp" />

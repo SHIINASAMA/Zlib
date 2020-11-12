@@ -5,12 +5,11 @@
 #include "../Zlib/ZEdit.h"
 #include "../Zlib/ZBitmap.h"
 #include "../Zlib/ZPictureBox.h"
+#include "../Zlib/ZProgressBar.h"
 
 ZWindow* Win;
-ZStatic* Label;
-ZButton* Button;
-ZEdit* Edit;
 ZPictureBox* Pox;
+ZProgressBar* bar;
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
@@ -19,10 +18,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	case WM_COMMAND:
 		switch (LOWORD(wParam))
 		{
-		case 0:
-			//MessageBox(hWnd, L"你点击了我", L"消息", MB_OK | MB_ICONINFORMATION);
-			Pox->SetImage(ZBitmap(L"C:\\Users\\kaoru\\Desktop\\b.bmp"));
-			break;
 		default:
 			break;
 		}
