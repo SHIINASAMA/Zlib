@@ -7,6 +7,8 @@ private:
 
 public:
 	ZBitmap();
+	//初始化一个 ZBitmap 对象
+	ZBitmap(ZString path);
 	// 加载 Bitmap 对象的句柄
 	void LoadRes(ZString path);
 

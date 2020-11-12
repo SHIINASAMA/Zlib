@@ -5,10 +5,10 @@
 class ZSize
 {
 public:
-	int W = 0;
-	int H = 0;
+	long W = 0;
+	long H = 0;
 
 	ZSize();
 	//初始化一个 ZSize 对象
-	ZSize(int W, int Y);
+	ZSize(long W, long Y);
 };

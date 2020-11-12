@@ -20,7 +20,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		switch (LOWORD(wParam))
 		{
 		case 0:
-			MessageBox(hWnd, L"你点击了我", L"消息", MB_OK | MB_ICONINFORMATION);
+			//MessageBox(hWnd, L"你点击了我", L"消息", MB_OK | MB_ICONINFORMATION);
+			Pox->SetImage(ZBitmap(L"C:\\Users\\kaoru\\Desktop\\b.bmp"));
 			break;
 		default:
 			break;
@@ -35,16 +36,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		break;
 	case WM_PAINT:
 	{
-		/*PAINTSTRUCT ps;
-		HDC hdc = BeginPaint(Label->GetHandle(), &ps);
-		HDC hdcmem = CreateCompatibleDC(hdc);
-		ZBitmap zbmp;
-		zbmp.LoadRes(L"C:\\Users\\kaoru\\Desktop\\b.bmp");
-		BITMAP bmp = zbmp.GetBitmap();
-		SelectObject(hdcmem, zbmp);
-		BitBlt(hdc, 0, 0, bmp.bmWidth, bmp.bmHeight, hdcmem, 0, 0, SRCCOPY);
-		DeleteDC(hdcmem);
-		EndPaint(Label->GetHandle(), &ps);*/
 		Pox->Show();
 	}
 	break;

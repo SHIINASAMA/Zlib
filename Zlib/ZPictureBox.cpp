@@ -4,18 +4,16 @@ ZPictureBox::ZPictureBox()
 {
 }
 
-ZPictureBox::ZPictureBox(ZRect Rect, ZBitmap Bmp, UINT Mode)
+ZPictureBox::ZPictureBox(ZRect Rect, HWND PhWnd, DWORDLONG ID, UINT Mode)
 {
 	this->Rect = Rect;
-	if (!Bmp)
-	{
-		this->Bmp = Bmp;
-		this->HasImage = TRUE;
-	}
+	this->Bmp = Bmp;
+	this->HasImage = TRUE;
+	this->PhWnd = PhWnd;
 	this->Mode = Mode;
 }
 
-ZPictureBox::ZPictureBox(int X, int Y, int W, int H, ZBitmap Bmp, UINT Mode)
+ZPictureBox::ZPictureBox(int X, int Y, int W, int H, HWND PhWnd, DWORDLONG ID, UINT Mode)
 {
 	ZRect Rect;
 	Rect.A.X = X;
@@ -23,11 +21,9 @@ ZPictureBox::ZPictureBox(int X, int Y, int W, int H, ZBitmap Bmp, UINT Mode)
 	Rect.B.X = Rect.A.X + W;
 	Rect.B.Y = Rect.A.Y + H;
 	this->Rect = Rect;
-	if (!Bmp)
-	{
-		this->Bmp = Bmp;
-		this->HasImage = TRUE;
-	}
+	this->Bmp = Bmp;
+	this->HasImage = TRUE;
+	this->PhWnd = PhWnd;
 	this->Mode = Mode;
 }
 
@@ -52,26 +48,73 @@ void ZPictureBox::Init(HWND hWnd)
 
 void ZPictureBox::Show()
 {
-	PAINTSTRUCT ps;
-	HDC hdc = BeginPaint(this->hWnd, &ps);
-	HDC hdcmem = CreateCompatibleDC(hdc);
-	ZBitmap zbmp;
-	zbmp.LoadRes(L"C:\\Users\\kaoru\\Desktop\\b.bmp");
-	BITMAP bmp = zbmp.GetBitmap();
-	SelectObject(hdcmem, zbmp);
-	BitBlt(hdc, 0, 0, bmp.bmWidth, bmp.bmHeight, hdcmem, 0, 0, SRCCOPY);
-	DeleteDC(hdcmem);
-	EndPaint(this->hWnd, &ps);
+	if (HasImage)
+	{
+		PAINTSTRUCT ps;
+		HDC hdc = BeginPaint(this->hWnd, &ps);
+		HDC hdcmem = CreateCompatibleDC(hdc);
+		LONG w = Rect.GetSize().W, h = Rect.GetSize().H;
+		SelectObject(hdcmem, Bmp);
+		BITMAP bmp = Bmp.GetBitmap();
+		switch (Mode)
+		{
+		case ZP_DISPLAYMODE_NORMAL:
+			//ÕâÀïÓÃ StretchBlt
+			SetStretchBltMode(hdc, COLORONCOLOR);
+			StretchBlt(hdc, 0, 0, w, h, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+			break;
+		case ZP_DISPLAYMODE_ZOOM:
+			SetStretchBltMode(hdc, COLORONCOLOR);
+			if (bmp.bmWidth >= bmp.bmHeight)
+			{
+				long y = (double)bmp.bmHeight / (double)bmp.bmWidth * Rect.GetSize().H;
+				y = (h - y) / 2;
+				StretchBlt(hdc, 0, y, w, h - 2 * y, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+			}
+			else
+			{
+				long x = (double)bmp.bmWidth / (double)bmp.bmHeight * Rect.GetSize().W;
+				x = (w - x) / 2;
+				StretchBlt(hdc, x, 0, w - 2 * x, h, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+			}
+			break;
+		case ZP_DISPLAYMODE_NONE:
+			if (bmp.bmWidth < Rect.GetSize().W)
+				w = bmp.bmWidth;
+			if (bmp.bmHeight < Rect.GetSize().H)
+				h = bmp.bmHeight;
+			BitBlt(hdc, 0, 0, w, h, hdcmem, 0, 0, SRCCOPY);
+			break;
+		default:
+			break;
+		}
+		DeleteDC(hdcmem);
+		EndPaint(this->hWnd, &ps);
+	}
 }
 
 void ZPictureBox::SetImage(ZBitmap Bmp)
 {
+	this->Bmp = Bmp;
+	this->HasImage = TRUE;
+	UpdateMessage();
 }
 
 void ZPictureBox::CleanImage()
 {
+	this->Bmp = nullptr;
+	this->HasImage = FALSE;
+	UpdateMessage();
+}
+
+void ZPictureBox::SetMode(UINT Mode)
+{
+	this->Mode = Mode;
+	UpdateMessage();
 }
 
 void ZPictureBox::UpdateMessage()
 {
+	RECT rect = Rect.GetRect();
+	InvalidateRect(PhWnd, &rect, FALSE);
 }

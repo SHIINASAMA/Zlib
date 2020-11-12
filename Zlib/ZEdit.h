@@ -11,9 +11,9 @@ protected:
 public:
 	ZEdit();
 	//实例化一个 ZEdit 对象
-	ZEdit(ZString Text, ZRect Rect, DWORD ID);
+	ZEdit(ZString Text, ZRect Rect, DWORDLONG ID);
 	//实例化一个 ZEdit 对象
-	ZEdit(ZString Text, int X, int Y, int W, int H, DWORD ID);
+	ZEdit(ZString Text, int X, int Y, int W, int H, DWORDLONG ID);
 
 	void Init(HWND hWnd);
 };

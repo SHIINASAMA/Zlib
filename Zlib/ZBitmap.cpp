@@ -4,6 +4,11 @@ ZBitmap::ZBitmap()
 {
 }
 
+ZBitmap::ZBitmap(ZString path)
+{
+	LoadRes(path);
+}
+
 void ZBitmap::LoadRes(ZString path)
 {
 	this->hmap = (HBITMAP)LoadImage(

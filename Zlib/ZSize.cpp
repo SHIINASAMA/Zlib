@@ -2,10 +2,9 @@
 
 ZSize::ZSize()
 {
-
 }
 
-ZSize::ZSize(int W, int H)
+ZSize::ZSize(long W, long H)
 {
 	this->W = W;
 	this->H = H;
