@@ -121,6 +121,8 @@
     <ClCompile Include="ZProgressBar.cpp">
       <Filter>Control</Filter>
     </ClCompile>
-    <ClCompile Include="ZRange.cpp" />
+    <ClCompile Include="ZRange.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
