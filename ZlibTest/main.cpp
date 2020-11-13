@@ -4,7 +4,7 @@ int main()
 {
 	Win = new ZWindow(L"This is a title", L"MyApp", 200, 200, 800, 600, WndProc);
 	Win->Create();
-	Pox = new ZPictureBox(10, 95, 300, 600, Win->GetHandle(), 2, ZP_DISPLAYMODE_ZOOM);
+	Pox = new ZPictureBox(10, 95, 600, 300, Win->GetHandle(), 2, ZP_DISPLAYMODE_ZOOM);
 	Pox->SetImage(ZBitmap(L"C:\\Users\\kaoru\\Desktop\\b.bmp"));
 	Win->AddControl(Pox);
 
