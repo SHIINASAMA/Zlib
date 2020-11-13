@@ -53,7 +53,6 @@ void ZPictureBox::Show()
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(this->hWnd, &ps);
 		HDC hdcmem = CreateCompatibleDC(hdc);
-		LONG w = Rect.GetSize().W, h = Rect.GetSize().H;
 		SelectObject(hdcmem, Bmp);
 		BITMAP bmp = Bmp.GetBitmap();
 		switch (Mode)
@@ -61,30 +60,41 @@ void ZPictureBox::Show()
 		case ZP_DISPLAYMODE_NORMAL:
 			//这里用 StretchBlt
 			SetStretchBltMode(hdc, COLORONCOLOR);
-			StretchBlt(hdc, 0, 0, w, h, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
-			break;
+			{
+				StretchBlt(hdc, 0, 0, Rect.GetSize().W, Rect.GetSize().H, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+				break;
+			}
 		case ZP_DISPLAYMODE_ZOOM:
+			//TODO:修复 ZP_DISPLAYMODE_ZOOM 变形bug,除了图片宽高比要计算，控件的也应当要，否则会变形
 			SetStretchBltMode(hdc, COLORONCOLOR);
-			if (bmp.bmWidth >= bmp.bmHeight)
 			{
-				long y = (double)bmp.bmHeight / (double)bmp.bmWidth * Rect.GetSize().H;
-				y = (h - y) / 2;
-				StretchBlt(hdc, 0, y, w, h - 2 * y, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+				double con = (double)Rect.GetSize().W / (double)Rect.GetSize().H;
+				double pic = (double)bmp.bmWidth / (double)bmp.bmHeight;
+
+				if (con >= 1)
+				{
+					LONG x = pic * Rect.GetSize().H;
+					x = (Rect.GetSize().W - x) / 2;
+					StretchBlt(hdc, x, 0, Rect.GetSize().W - 2 * x, Rect.GetSize().H, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+				}
+				else
+				{
+					LONG y = Rect.GetSize().W / pic;
+					y = (Rect.GetSize().H - y) / 2;
+					StretchBlt(hdc, 0, y, Rect.GetSize().W, Rect.GetSize().H - 2 * y, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
+				}
+				break;
 			}
-			else
-			{
-				long x = (double)bmp.bmWidth / (double)bmp.bmHeight * Rect.GetSize().W;
-				x = (w - x) / 2;
-				StretchBlt(hdc, x, 0, w - 2 * x, h, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
-			}
-			break;
 		case ZP_DISPLAYMODE_NONE:
+		{
+			LONG w = Rect.GetSize().W, h = Rect.GetSize().H;
 			if (bmp.bmWidth < Rect.GetSize().W)
 				w = bmp.bmWidth;
 			if (bmp.bmHeight < Rect.GetSize().H)
 				h = bmp.bmHeight;
 			BitBlt(hdc, 0, 0, w, h, hdcmem, 0, 0, SRCCOPY);
 			break;
+		}
 		default:
 			break;
 		}

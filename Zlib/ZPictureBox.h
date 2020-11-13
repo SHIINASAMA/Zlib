@@ -13,7 +13,7 @@ class ZPictureBox : public ZControl
 protected:
 	HWND PhWnd;
 	ZString Type = L"static";
-	DWORD Style = WS_CHILD | WS_VISIBLE | SS_BITMAP;
+	DWORD Style = WS_CHILD | WS_VISIBLE | SS_BITMAP | WS_BORDER;
 	UINT Mode = ZP_DISPLAYMODE_NORMAL;
 	BOOL HasImage = FALSE;
 	ZBitmap Bmp;
