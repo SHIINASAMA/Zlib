@@ -65,7 +65,6 @@ void ZPictureBox::Show()
 				break;
 			}
 		case ZP_DISPLAYMODE_ZOOM:
-			//TODO:修复 ZP_DISPLAYMODE_ZOOM 变形bug,除了图片宽高比要计算，控件的也应当要，否则会变形
 			SetStretchBltMode(hdc, COLORONCOLOR);
 			{
 				double con = (double)Rect.GetSize().W / (double)Rect.GetSize().H;
