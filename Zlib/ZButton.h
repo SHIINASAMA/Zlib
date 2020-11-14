@@ -13,4 +13,6 @@ public:
 	//初始化一个 ZButton 对象
 	ZButton(ZString Text, int X, int Y, int W, int H, DWORD ID);
 	void Init(HWND hWnd);
+
+	//TODO:添加enable功能
 };
