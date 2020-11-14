@@ -1,4 +1,4 @@
-#include "ZPictureBox.h"
+ï»¿#include "ZPictureBox.h"
 
 ZPictureBox::ZPictureBox()
 {
@@ -43,7 +43,7 @@ void ZPictureBox::Init(HWND hWnd)
 		NULL
 	);
 
-	Font.Create(L"ÐÂËÎÌå");
+	Font.Create(L"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 }
 
 void ZPictureBox::Show()
@@ -58,7 +58,7 @@ void ZPictureBox::Show()
 		switch (Mode)
 		{
 		case ZP_DISPLAYMODE_NORMAL:
-			//ÕâÀïÓÃ StretchBlt
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ StretchBlt
 			SetStretchBltMode(hdc, COLORONCOLOR);
 			{
 				StretchBlt(hdc, 0, 0, Rect.GetSize().W, Rect.GetSize().H, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);
