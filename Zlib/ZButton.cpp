@@ -41,3 +41,19 @@ void ZButton::Init(HWND hWnd)
 	Font.Create(L"ÐÂËÎÌå");
 	SetFont(Font);
 }
+
+void ZButton::SetEnable(BOOL Enable)
+{
+	/*long style = getwindowlong(this->hwnd, gwl_style);
+	if (enable)
+	{
+		style &= ~ws_disabled;
+	}
+	else
+	{
+		style |= ws_disabled;
+	}
+	setwindowlong(this->hwnd, gwl_style, style);*/
+
+	EnableWindow(this->hWnd, Enable);
+}

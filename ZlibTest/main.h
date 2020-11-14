@@ -20,6 +20,7 @@ DWORD WINAPI Change(LPVOID)
 		bar->SetValue(i);
 		Sleep(1000);
 	}
+	btn->SetEnable(TRUE);
 	return 0;
 }
 
@@ -35,6 +36,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			//PostMessage(bar->GetHandle(), PBM_SETPOS, 80, 0);
 			DWORD ID;
 			HANDLE hThread = CreateThread(NULL, 0, Change, (LPVOID)(0), 0, &ID);
+			btn->SetEnable(FALSE);
 			break;
 		}
 		default:

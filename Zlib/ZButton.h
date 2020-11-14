@@ -14,5 +14,6 @@ public:
 	ZButton(ZString Text, int X, int Y, int W, int H, DWORDLONG ID);
 	void Init(HWND hWnd);
 
-	//TODO:添加enable功能
+	//设置控件是否可用
+	void SetEnable(BOOL Enable);
 };
