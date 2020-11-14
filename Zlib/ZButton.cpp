@@ -4,13 +4,14 @@ ZButton::ZButton()
 {
 }
 
-ZButton::ZButton(ZString Text, ZRect Rect, DWORD ID)
+ZButton::ZButton(ZString Text, ZRect Rect, DWORDLONG ID)
 {
 	this->Text = Text;
 	this->Rect = Rect;
+	this->ID = ID;
 }
 
-ZButton::ZButton(ZString Text, int X, int Y, int W, int H, DWORD ID)
+ZButton::ZButton(ZString Text, int X, int Y, int W, int H, DWORDLONG ID)
 {
 	this->Text = Text;
 	ZRect Rect;
@@ -18,6 +19,7 @@ ZButton::ZButton(ZString Text, int X, int Y, int W, int H, DWORD ID)
 	Rect.A.Y = Y;
 	Rect.SetSize(ZSize(W, H));
 	this->Rect = Rect;
+	this->ID = ID;
 }
 
 void ZButton::Init(HWND hWnd)
@@ -32,7 +34,7 @@ void ZButton::Init(HWND hWnd)
 		Rect.GetSize().H,
 		hWnd,
 		(HMENU)ID,
-		(HINSTANCE)GetWindowLong(hWnd,-6),
+		(HINSTANCE)GetWindowLong(hWnd, -6),
 		NULL
 	);
 

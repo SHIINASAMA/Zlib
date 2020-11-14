@@ -7,17 +7,36 @@
 #include "../Zlib/ZPictureBox.h"
 #include "../Zlib/ZProgressBar.h"
 
+#define ID_BTN1 1
+
 ZWindow* Win;
-ZPictureBox* Pox;
 ZProgressBar* bar;
+ZButton* btn;
+
+DWORD WINAPI Change(LPVOID)
+{
+	for (int i = 0; i < 100; i++)
+	{
+		bar->SetValue(i);
+		Sleep(1000);
+	}
+	return 0;
+}
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
 	case WM_COMMAND:
-		switch (LOWORD(wParam))
+		switch (wParam)
 		{
+		case ID_BTN1:
+		{
+			//PostMessage(bar->GetHandle(), PBM_SETPOS, 80, 0);
+			DWORD ID;
+			HANDLE hThread = CreateThread(NULL, 0, Change, (LPVOID)(0), 0, &ID);
+			break;
+		}
 		default:
 			break;
 		}
@@ -31,7 +50,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		break;
 	case WM_PAINT:
 	{
-		Pox->Show();
 	}
 	break;
 	case WM_DESTROY:

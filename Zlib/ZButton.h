@@ -9,8 +9,8 @@ protected:
 public:
 	ZButton();
 	//初始化一个 ZButton 对象
-	ZButton(ZString Text, ZRect Rect, DWORD ID);
+	ZButton(ZString Text, ZRect Rect, DWORDLONG ID);
 	//初始化一个 ZButton 对象
-	ZButton(ZString Text, int X, int Y, int W, int H, DWORD ID);
+	ZButton(ZString Text, int X, int Y, int W, int H, DWORDLONG ID);
 	void Init(HWND hWnd);
 };
