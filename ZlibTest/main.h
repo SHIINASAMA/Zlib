@@ -6,8 +6,10 @@
 #include "../Zlib/ZBitmap.h"
 #include "../Zlib/ZPictureBox.h"
 #include "../Zlib/ZProgressBar.h"
+#include "../Zlib/ZMenu.h"
 
 #define ID_BTN1 1
+#define ID_MENU1 2
 
 ZWindow* Win;
 ZProgressBar* bar;
@@ -28,9 +30,12 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (uMsg)
 	{
+	case WM_RBUTTONDOWN:
+		break;
 	case WM_COMMAND:
 		switch (wParam)
 		{
+		case ID_MENU1:
 		case ID_BTN1:
 		{
 			//PostMessage(bar->GetHandle(), PBM_SETPOS, 80, 0);
