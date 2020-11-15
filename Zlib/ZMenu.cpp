@@ -12,6 +12,16 @@ void ZMenu::InitItem()
 	AppendMenu(this->hMenu, Style, ID, Text);
 }
 
+ZMenu::operator HMENU()
+{
+	return this->hMenu;
+}
+
+void ZMenu::operator=(HMENU hMenu)
+{
+	this->hMenu = hMenu;
+}
+
 ZMenu::ZMenu()
 {
 }
@@ -30,8 +40,14 @@ HWND ZMenu::GetHandle()
 	return (HWND)this->hMenu;
 }
 
-void ZMenu::AddItem(ZMenuItem Item)
+void ZMenu::AddSubItem(ZMenuItem Item)
 {
 	Item.InitItem();
 	AppendMenu(this->hMenu, this->Style, (UINT_PTR)Item.hMenu, this->Text);
+}
+
+void ZMenu::AddItem(ZMenuItem Item)
+{
+	Item.InitItem();
+	AppendMenu(this->hMenu, Item.Style, Item.ID, Item.Text);
 }
