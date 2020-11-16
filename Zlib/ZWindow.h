@@ -2,7 +2,9 @@
 #include "ZControl.h"
 
 //Òþ²Ø¿ØÖÆÌ¨
+#ifdef HIDE
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+#endif // HIDE
 
 class ZWindow : public ZControl
 {

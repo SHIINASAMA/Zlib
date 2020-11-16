@@ -52,3 +52,26 @@ void ZMenu::AddItem(ZMenuItem Item)
 	Item.InitItem();
 	AppendMenu(this->hMenu, Item.Style, Item.ID, Item.Text);
 }
+
+ZMenu ZMenu::GetSubItem(UINT Pos)
+{
+	HMENU h = GetSubMenu(this->hMenu, Pos);
+	ZMenu t;
+	t.hMenu = h;
+	return t;
+}
+
+void ZMenu::SetTextPre(ZString str)
+{
+	this->Text = str;
+}
+
+void ZMenu::SetIDPre(UINT ID)
+{
+	this->ID = ID;
+}
+
+void ZMenu::SetStylePre(DWORD Style)
+{
+	this->Style = Style;
+}

@@ -21,6 +21,15 @@ public:
 	void AddSubItem(ZMenuItem Item);
 	//添加同级项
 	void AddItem(ZMenuItem Item);
+	//获取子项
+	ZMenu GetSubItem(UINT Pos);
+
+	//设置文本
+	void SetTextPre(ZString str);
+	//设置ID
+	void SetIDPre(UINT ID);
+	//设置风格
+	void SetStylePre(DWORD Style = MF_STRING | MF_POPUP);
 
 	//添加控件时父类调用的函数
 	void Init(HWND hWnd);

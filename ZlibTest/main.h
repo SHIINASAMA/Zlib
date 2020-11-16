@@ -8,6 +8,7 @@
 #include "../Zlib/ZProgressBar.h"
 #include "../Zlib/ZMenu.h"
 #include "resource.h"
+#include <stdio.h>
 
 #define ID_BTN1 1
 
@@ -22,6 +23,7 @@ DWORD WINAPI Change(LPVOID)
 	{
 		bar->SetValue(i);
 		Sleep(1000);
+		//printf_s("%d\n", i);
 	}
 	btn->SetEnable(TRUE);
 	return 0;
