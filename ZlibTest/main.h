@@ -7,11 +7,12 @@
 #include "../Zlib/ZPictureBox.h"
 #include "../Zlib/ZProgressBar.h"
 #include "../Zlib/ZMenu.h"
+#include "resource.h"
 
 #define ID_BTN1 1
-#define ID_MENU1 2
 
 ZWindow* Win;
+ZMenu* Menu;
 ZProgressBar* bar;
 ZButton* btn;
 
@@ -31,11 +32,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	switch (uMsg)
 	{
 	case WM_RBUTTONDOWN:
+	{
+		POINT pt;
+		pt.x = LOWORD(lParam);
+		pt.y = HIWORD(lParam);
+		ClientToScreen(hWnd, (LPPOINT)&pt);
+		HMENU sub = GetSubMenu(*Menu, 0);
+		TrackPopupMenu(sub, TPM_LEFTALIGN | TPM_LEFTBUTTON, pt.x, pt.y, 0, hWnd, NULL);
 		break;
+	}
 	case WM_COMMAND:
 		switch (wParam)
 		{
-		case ID_MENU1:
 		case ID_BTN1:
 		{
 			//PostMessage(bar->GetHandle(), PBM_SETPOS, 80, 0);

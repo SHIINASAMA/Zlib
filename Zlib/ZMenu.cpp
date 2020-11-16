@@ -24,6 +24,7 @@ void ZMenu::operator=(HMENU hMenu)
 
 ZMenu::ZMenu()
 {
+	this->hMenu = CreateMenu();
 }
 
 ZMenu::ZMenu(ZString Text, DWORDLONG ID, DWORD Style)
