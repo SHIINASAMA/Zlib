@@ -12,6 +12,15 @@ void ZMenu::InitItem()
 	AppendMenu(this->hMenu, Style, ID, Text);
 }
 
+void ZMenu::ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag)
+{
+	POINT pt;
+	pt.x = X;
+	pt.y = Y;
+	ClientToScreen(hWnd, (LPPOINT)&pt);
+	TrackPopupMenu(this->hMenu, Flag, pt.x, pt.y, 0, hWnd, NULL);
+}
+
 ZMenu::operator HMENU()
 {
 	return this->hMenu;

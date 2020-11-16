@@ -36,6 +36,9 @@ public:
 	//添加项时父类调用的函数
 	void InitItem();
 
+	//弹出上下文菜单
+	void ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag = TPM_LEFTALIGN | TPM_LEFTBUTTON);
+
 	operator HMENU();
 	void operator=(HMENU hMenu);
 };

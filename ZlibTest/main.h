@@ -35,12 +35,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_RBUTTONDOWN:
 	{
-		POINT pt;
-		pt.x = LOWORD(lParam);
-		pt.y = HIWORD(lParam);
-		ClientToScreen(hWnd, (LPPOINT)&pt);
-		HMENU sub = GetSubMenu(*Menu, 0);
-		TrackPopupMenu(sub, TPM_LEFTALIGN | TPM_LEFTBUTTON, pt.x, pt.y, 0, hWnd, NULL);
+		ZMenuItem temp = Menu->GetSubItem(0);
+		temp.ShowPopupMenu(hWnd, LOWORD(lParam), HIWORD(lParam));
 		break;
 	}
 	case WM_COMMAND:
