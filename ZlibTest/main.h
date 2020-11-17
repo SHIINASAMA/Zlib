@@ -1,4 +1,5 @@
 #pragma once
+#define HIDE
 #include "../Zlib/ZWindow.h"
 #include "../Zlib/ZStatic.h"
 #include "../Zlib/ZButton.h"

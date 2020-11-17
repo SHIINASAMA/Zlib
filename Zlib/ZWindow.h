@@ -4,6 +4,7 @@
 //隐藏控制台
 #ifdef HIDE
 #pragma comment( linker, "/subsystem:\"windows\" /entry:\"mainCRTStartup\"" )
+#else
 #endif // HIDE
 
 class ZWindow : public ZControl
@@ -15,6 +16,14 @@ protected:
 	void StartLoop();
 
 public:
+	//模式对话框返回值枚举
+	enum DialogResult
+	{
+		Yes = 0,
+		No = 1
+	};
+	DialogResult Result = No;
+
 	//初始化一个 ZWindow 对象
 	ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc);
 	//初始化一个 ZWindow 对象
@@ -24,6 +33,7 @@ public:
 
 	//初始化
 	void Init(HWND hWnd);
+	DialogResult ShowDialog(HWND hWnd);
 
 	//创建窗体（其中包括了注册类和初始化）
 	void Create();

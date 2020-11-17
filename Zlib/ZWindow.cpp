@@ -25,6 +25,12 @@ void ZWindow::Init(HWND hWnd)
 	SetFont(Font);
 }
 
+ZWindow::DialogResult ZWindow::ShowDialog(HWND hWnd)
+{
+	DialogBoxParamW(hInstance, Text, hWnd, wcex.lpfnWndProc, NULL);
+	return this->Result;
+}
+
 void ZWindow::StartLoop()
 {
 	ZControl::StartLoop();
