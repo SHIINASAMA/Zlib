@@ -4,13 +4,13 @@
 
 轻量级Windows平台开发SDK
 
-最新版本为<kbd>[0.1.3](https://github.com/SHIINASAMA/Zlib/releases)</kbd>
+最新版本为<kbd>[0.1.4](https://github.com/SHIINASAMA/Zlib/releases)</kbd>
 
 目标是抽取Win32开发的最主要部分，封装主要控件，同时还要保留最基本的消息循环机制。
 
 下面是一个窗口程序所需的最小代码量：
 
-```
+```c++
 #include "ZWindow.h"
 
 LRESULT CALLBACK WndProc(HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
