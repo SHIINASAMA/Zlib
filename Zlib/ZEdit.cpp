@@ -4,14 +4,15 @@ ZEdit::ZEdit()
 {
 }
 
-ZEdit::ZEdit(ZString Text, ZRect Rect, DWORDLONG ID)
+ZEdit::ZEdit(ZString Text, ZRect Rect, DWORDLONG ID, DWORD Style)
 {
 	this->Text = Text;
 	this->Rect = Rect;
 	this->ID = ID;
+	this->Style = Style;
 }
 
-ZEdit::ZEdit(ZString Text, int X, int Y, int W, int H, DWORDLONG ID)
+ZEdit::ZEdit(ZString Text, int X, int Y, int W, int H, DWORDLONG ID, DWORD Style)
 {
 	this->Text = Text;
 	ZRect Rect;

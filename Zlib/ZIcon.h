@@ -8,6 +8,9 @@ public:
 	void operator=(HICON hIcon);
 	operator HICON();
 
-	//加载 Icon 资源
-	void LoadRes(ZString Path);
+	//从文件中加载 Icon 资源
+	void LoadResFromFile(ZString Path);
+
+	//从资源中加载 Icon 资源
+	void LoadRes(WORD ID);
 };

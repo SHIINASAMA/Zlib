@@ -1,5 +1,7 @@
 #include "main.h"
 
+//TODO:设计系统托盘控件
+
 int main()
 {
 	Win = new ZWindow(L"This is a title", L"MyApp", 200, 200, 800, 600, WndProc);

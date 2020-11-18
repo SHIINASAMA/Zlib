@@ -31,7 +31,7 @@ void ZControl::StartLoop()
 	ShowWindow(hWnd, SW_SHOWNORMAL);
 	UpdateWindow(hWnd);
 	MSG msg;
-	while(GetMessage(&msg,NULL,0,0))
+	while (GetMessage(&msg, NULL, 0, 0))
 	{
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
@@ -90,7 +90,7 @@ void ZControl::SetPosition(ZRect Rect)
 {
 	MoveWindow(
 		hWnd, Rect.A.X, Rect.A.Y,
-		Rect.B.X - Rect.A.X, 
+		Rect.B.X - Rect.A.X,
 		Rect.B.Y - Rect.A.Y,
 		TRUE
 	);

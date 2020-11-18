@@ -10,7 +10,7 @@ ZIcon::operator HICON()
 	return this->hIcon;
 }
 
-void ZIcon::LoadRes(ZString Path)
+void ZIcon::LoadResFromFile(ZString Path)
 {
 	this->hIcon = (HICON)LoadImage(
 		NULL,
@@ -21,4 +21,9 @@ void ZIcon::LoadRes(ZString Path)
 		LR_CREATEDIBSECTION |
 		LR_LOADFROMFILE
 	);
+}
+
+void ZIcon::LoadRes(WORD ID)
+{
+	this->hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(ID))
 }

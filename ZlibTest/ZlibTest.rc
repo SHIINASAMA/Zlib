@@ -62,6 +62,18 @@ BEGIN
     MENUITEM "编辑(&E)",                      0
 END
 
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "favicon.ico"
+
+IDI_ICON2               ICON                    "sm.ico"
+
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
 
