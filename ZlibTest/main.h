@@ -8,6 +8,7 @@
 #include "../Zlib/ZPictureBox.h"
 #include "../Zlib/ZProgressBar.h"
 #include "../Zlib/ZMenu.h"
+#include "../Zlib/ZNotify.h"
 #include "resource.h"
 #include <stdio.h>
 
@@ -17,6 +18,7 @@ ZWindow* Win;
 ZMenu* Menu;
 ZProgressBar* bar;
 ZButton* btn;
+ZNotify* nit;
 
 DWORD WINAPI Change(LPVOID)
 {
@@ -62,11 +64,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		//设置透明背景必要Style WS_EX_TRANSPARENT
 		return ZGraphics::SetBkTransparent(TRUE, wParam);
 		break;
-	case WM_PAINT:
-	{
-	}
-	break;
+	case WM_USER + 1:
+		if (lParam == WM_LBUTTONDBLCLK)
+		{
+			MessageBox(hWnd, L"Hello", L"Title", MB_OK);
+		}
+		break;
 	case WM_DESTROY:
+		nit->Delete();
 		PostQuitMessage(0);
 	default:
 		break;

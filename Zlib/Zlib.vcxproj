@@ -29,6 +29,7 @@
     <ClInclude Include="ZIcon.h" />
     <ClInclude Include="ZImage.h" />
     <ClInclude Include="ZMenu.h" />
+    <ClInclude Include="ZNotify.h" />
     <ClInclude Include="ZPictureBox.h" />
     <ClInclude Include="ZPoint.h" />
     <ClInclude Include="ZProgressBar.h" />
@@ -50,6 +51,7 @@
     <ClCompile Include="ZIcon.cpp" />
     <ClCompile Include="ZImage.cpp" />
     <ClCompile Include="ZMenu.cpp" />
+    <ClCompile Include="ZNotify.cpp" />
     <ClCompile Include="ZPictureBox.cpp" />
     <ClCompile Include="ZPoint.cpp" />
     <ClCompile Include="ZProgressBar.cpp" />

@@ -71,6 +71,9 @@
     <ClInclude Include="ZMenu.h">
       <Filter>Control</Filter>
     </ClInclude>
+    <ClInclude Include="ZNotify.h">
+      <Filter>Control</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZString.cpp">
@@ -128,6 +131,9 @@
       <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="ZMenu.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZNotify.cpp">
       <Filter>Control</Filter>
     </ClCompile>
   </ItemGroup>

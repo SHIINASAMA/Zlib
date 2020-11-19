@@ -25,25 +25,24 @@ LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
-    "resource.h\0"
+"resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
-    "#include ""winres.h""\r\n"
-    "\0"
+"#include ""winres.h""\r\n"
+"\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
-    "\r\n"
-    "\0"
+"\r\n"
+"\0"
 END
 
 #endif    // APSTUDIO_INVOKED
-
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -52,16 +51,15 @@ END
 
 IDR_MENU1 MENU
 BEGIN
-    POPUP "文件(&F)"
-    BEGIN
-        MENUITEM "新建(&N)",                      ID__40001
-        MENUITEM "打开(&O)",                      ID_40002
-        MENUITEM SEPARATOR
-        MENUITEM "退出(&X)",                      ID_40003
-    END
-    MENUITEM "编辑(&E)",                      0
+POPUP "文件(&F)"
+BEGIN
+MENUITEM "新建(&N)", ID__40001
+MENUITEM "打开(&O)", ID_40002
+MENUITEM SEPARATOR
+MENUITEM "退出(&X)", ID_40003
 END
-
+MENUITEM "编辑(&E)", 0
+END
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -72,12 +70,8 @@ END
 // remains consistent on all systems.
 IDI_ICON1               ICON                    "favicon.ico"
 
-IDI_ICON2               ICON                    "sm.ico"
-
 #endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
-
-
 
 #ifndef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -85,7 +79,5 @@ IDI_ICON2               ICON                    "sm.ico"
 // Generated from the TEXTINCLUDE 3 resource.
 //
 
-
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
-

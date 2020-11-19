@@ -9,6 +9,8 @@ public:
 	ZBitmap();
 	//初始化一个 ZBitmap 对象
 	ZBitmap(ZString path);
+	//初始化一个 ZBitmap 对象
+	ZBitmap(WORD ID);
 
 	//从资源中加载 bmp 位图
 	void LoadRes(WORD ID);

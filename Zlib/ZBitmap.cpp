@@ -9,6 +9,11 @@ ZBitmap::ZBitmap(ZString path)
 	LoadResFromFile(path);
 }
 
+ZBitmap::ZBitmap(WORD ID)
+{
+	this->hmap = LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(ID));
+}
+
 void ZBitmap::LoadRes(WORD ID)
 {
 	this->hmap = LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(ID));
