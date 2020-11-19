@@ -9,9 +9,11 @@ public:
 	ZBitmap();
 	//初始化一个 ZBitmap 对象
 	ZBitmap(ZString path);
-	// 加载 Bitmap 对象的句柄
-	void LoadRes(ZString path);
-	//TODO:添加一个可以从资源中加载位图的方法
+
+	//从资源中加载 bmp 位图
+	void LoadRes(WORD ID);
+	//从文件中加载 bmp 位图
+	void LoadResFromFile(ZString path);
 
 	// 返回一个 BITMAP 对象
 	BITMAP GetBitmap();

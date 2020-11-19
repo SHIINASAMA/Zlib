@@ -6,10 +6,15 @@ ZBitmap::ZBitmap()
 
 ZBitmap::ZBitmap(ZString path)
 {
-	LoadRes(path);
+	LoadResFromFile(path);
 }
 
-void ZBitmap::LoadRes(ZString path)
+void ZBitmap::LoadRes(WORD ID)
+{
+	this->hmap = LoadBitmap(GetModuleHandle(NULL), MAKEINTRESOURCE(ID));
+}
+
+void ZBitmap::LoadResFromFile(ZString path)
 {
 	this->hmap = (HBITMAP)LoadImage(
 		NULL,
