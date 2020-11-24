@@ -1,8 +1,5 @@
 #include "main.h"
 
-//TODO:设计系统托盘控件
-#define WM_NOTIFY WM_USER+1
-
 int main()
 {
 	Win = new ZWindow(L"This is a title", L"MyApp", 200, 200, 800, 600, WndProc);
@@ -18,12 +15,8 @@ int main()
 	*Menu = LoadMenu(NULL, MAKEINTRESOURCE(IDR_MENU1));
 	Win->AddControl(Menu);
 
-	ZIcon ico;
-	ico.LoadRes(IDI_ICON1);
-	WChar str[] = L"你好";
-
-	nit = new ZNotify(L"你好", ico, WM_USER + 1);
-	Win->AddControl(nit);
+	CreateWindow(L"combobox", NULL, WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_HASSTRINGS,
+		190, 20, 80, 100, Win->GetHandle(), NULL, NULL, NULL);
 
 	Win->Run();
 	return 0;
