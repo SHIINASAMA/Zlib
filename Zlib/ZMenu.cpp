@@ -7,11 +7,6 @@ void ZMenu::Init(HWND hWnd)
 	//SetFont(Font);
 }
 
-void ZMenu::InitItem()
-{
-	AppendMenu(this->hMenu, Style, ID, Text);
-}
-
 void ZMenu::ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag)
 {
 	POINT pt;
@@ -19,6 +14,27 @@ void ZMenu::ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag)
 	pt.y = Y;
 	ClientToScreen(hWnd, (LPPOINT)&pt);
 	TrackPopupMenu(this->hMenu, Flag, pt.x, pt.y, 0, hWnd, NULL);
+}
+
+//todo:重构ZMenu类，继承ZItem类
+void ZMenu::AddItem(ZItem* Item)
+{
+}
+
+ZItem* ZMenu::GetItemAt(UINT Pos)
+{
+}
+
+void ZMenu::InsertItem(UINT Pos, ZItem* Item)
+{
+}
+
+void ZMenu::RemoveAt(UINT Pos)
+{
+}
+
+void ZMenu::InitItem(HWND hWnd)
+{
 }
 
 ZMenu::operator HMENU()
@@ -48,26 +64,6 @@ ZMenu::ZMenu(ZString Text, DWORDLONG ID, DWORD Style)
 HWND ZMenu::GetHandle()
 {
 	return (HWND)this->hMenu;
-}
-
-void ZMenu::AddSubItem(ZMenuItem Item)
-{
-	Item.InitItem();
-	AppendMenu(this->hMenu, this->Style, (UINT_PTR)Item.hMenu, this->Text);
-}
-
-void ZMenu::AddItem(ZMenuItem Item)
-{
-	Item.InitItem();
-	AppendMenu(this->hMenu, Item.Style, Item.ID, Item.Text);
-}
-
-ZMenu ZMenu::GetSubItem(UINT Pos)
-{
-	HMENU h = GetSubMenu(this->hMenu, Pos);
-	ZMenu t;
-	t.hMenu = h;
-	return t;
 }
 
 void ZMenu::SetTextPre(ZString str)
