@@ -15,6 +15,11 @@ int main()
 	*Menu = LoadMenu(NULL, MAKEINTRESOURCE(IDR_MENU1));
 	Win->AddControl(Menu);
 
+	ZMenu* m = new ZMenu(L"²âÊÔ", NULL);
+	//Menu->AddItem(m);
+	//Menu->RemoveAt(0);
+	Menu->InsertItem(1, m);
+
 	CreateWindow(L"combobox", NULL, WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_HASSTRINGS,
 		190, 20, 80, 100, Win->GetHandle(), NULL, NULL, NULL);
 

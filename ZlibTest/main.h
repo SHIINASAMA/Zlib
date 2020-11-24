@@ -38,7 +38,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 	{
 	case WM_RBUTTONDOWN:
 	{
-		ZMenuItem temp = Menu->GetSubItem(0);
+		ZMenuItem temp = Menu->GetItemAt(0);
 		temp.ShowPopupMenu(hWnd, LOWORD(lParam), HIWORD(lParam));
 		break;
 	}

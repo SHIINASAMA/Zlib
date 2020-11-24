@@ -19,22 +19,39 @@ void ZMenu::ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag)
 //todo:重构ZMenu类，继承ZItem类
 void ZMenu::AddItem(ZItem* Item)
 {
+	AppendMenu(this->hMenu,
+		((ZMenu*)Item)->Style,
+		NULL,
+		((ZMenu*)Item)->Text
+	);
 }
 
-ZItem* ZMenu::GetItemAt(UINT Pos)
+ZMenu ZMenu::GetItemAt(UINT Pos)
 {
+	HMENU hMenu = GetSubMenu(this->hMenu, Pos);
+	ZMenu m;
+	m.hMenu = hMenu;
+	return m;
 }
 
 void ZMenu::InsertItem(UINT Pos, ZItem* Item)
 {
+	InsertMenu(this->hMenu,
+		Pos,
+		MF_BYPOSITION,
+		(UINT_PTR)((ZMenu*)Item)->hMenu,
+		((ZMenu*)Item)->Text
+	);
 }
 
 void ZMenu::RemoveAt(UINT Pos)
 {
+	RemoveMenu(this->hMenu, Pos, MF_BYPOSITION);
 }
 
-void ZMenu::InitItem(HWND hWnd)
+void ZMenu::InitItem()
 {
+	AppendMenu(this->hMenu, Style, ID, Text);
 }
 
 ZMenu::operator HMENU()
