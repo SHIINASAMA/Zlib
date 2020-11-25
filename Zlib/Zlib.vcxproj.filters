@@ -77,6 +77,9 @@
     <ClInclude Include="ZItem.h">
       <Filter>Control</Filter>
     </ClInclude>
+    <ClInclude Include="ZComboBox.h">
+      <Filter>Control</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZString.cpp">
@@ -140,6 +143,9 @@
       <Filter>Control</Filter>
     </ClCompile>
     <ClCompile Include="ZItem.cpp">
+      <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZComboBox.cpp">
       <Filter>Control</Filter>
     </ClCompile>
   </ItemGroup>

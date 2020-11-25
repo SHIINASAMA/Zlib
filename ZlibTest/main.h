@@ -9,6 +9,7 @@
 #include "../Zlib/ZProgressBar.h"
 #include "../Zlib/ZMenu.h"
 #include "../Zlib/ZNotify.h"
+#include "../Zlib/ZComboBox.h"
 #include "resource.h"
 #include <stdio.h>
 

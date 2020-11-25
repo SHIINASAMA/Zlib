@@ -16,7 +16,6 @@ void ZMenu::ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag)
 	TrackPopupMenu(this->hMenu, Flag, pt.x, pt.y, 0, hWnd, NULL);
 }
 
-//todo:重构ZMenu类，继承ZItem类
 void ZMenu::AddItem(ZItem* Item)
 {
 	AppendMenu(this->hMenu,
