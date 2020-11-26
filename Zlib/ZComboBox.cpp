@@ -104,3 +104,14 @@ ZString ZComboBox::GetSelectedText()
 	UINT Pos = GetSelectedIndex();
 	return GetItemText(Pos);
 }
+
+void ZComboBox::RemoveAll()
+{
+	SendMessage(this->hWnd, CB_RESETCONTENT, 0, 0);
+}
+
+UINT ZComboBox::GetCount()
+{
+	UINT count = SendMessage(this->hWnd, CB_GETCOUNT, 0, 0);
+	return count;
+}

@@ -1,20 +1,17 @@
 #pragma once
-
 #include "ZControl.h"
-#include "ZItem.h"
-
-class ZComboBox : public ZControl
+class ZListBox : public ZControl
 {
 private:
-	ZString Type = L"combobox";
+	ZString Type = L"listbox";
 
 public:
-	//初始化一个ZComboBox对象
-	ZComboBox();
-	//初始化一个ZComboBox对象
-	ZComboBox(int X, int Y, int W, int H, DWORD Style = WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_HASSTRINGS);
-	//初始化一个ZComboBox对象
-	ZComboBox(ZRect Rect, DWORD Style = WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_HASSTRINGS);
+	//初始化一个 ZListBox 对象
+	ZListBox();
+	//初始化一个 ZListBox 对象
+	ZListBox(ZRect rect, DWORD Style = WS_CHILD | WS_VSCROLL | WS_TABSTOP | LBS_STANDARD | LBS_HASSTRINGS | WS_VISIBLE | WS_BORDER);
+	//初始化一个 ZListBox 对象
+	ZListBox(int X, int Y, int W, int H, DWORD Style = WS_CHILD | WS_VSCROLL | WS_TABSTOP | LBS_STANDARD | LBS_HASSTRINGS | WS_VISIBLE | WS_BORDER);
 
 	void Init(HWND hWnd);
 
