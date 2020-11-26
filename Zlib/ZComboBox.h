@@ -18,6 +18,8 @@ public:
 	void AddItem(ZString str);
 	void RemoveAt(UINT Pos);
 	void Insert(UINT Pos, ZString str);
+	ZString GetItemText(UINT Pos);
 	UINT GetSelectedIndex();
 	void SetSelectedIndex(UINT Pos);
+	ZString GetSelectedText();
 };

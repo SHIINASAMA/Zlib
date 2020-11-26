@@ -70,6 +70,14 @@ void ZComboBox::Insert(UINT Pos, ZString str)
 	);
 }
 
+ZString ZComboBox::GetItemText(UINT Pos)
+{
+	UINT len = SendMessage(this->hWnd, CB_GETLBTEXTLEN, Pos, 0);
+	WChar* str = new WChar[len];
+	SendMessage(this->hWnd, CB_GETLBTEXT, Pos, (LPARAM)str);
+	return ZString(str);
+}
+
 UINT ZComboBox::GetSelectedIndex()
 {
 	UINT temp = SendMessage(
@@ -89,4 +97,10 @@ void ZComboBox::SetSelectedIndex(UINT Pos)
 		Pos,
 		0
 	);
+}
+
+ZString ZComboBox::GetSelectedText()
+{
+	UINT Pos = GetSelectedIndex();
+	return GetItemText(Pos);
 }

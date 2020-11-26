@@ -5,25 +5,20 @@ int main()
 	Win = new ZWindow(L"This is a title", L"MyApp", 200, 200, 800, 600, WndProc);
 	Win->Create();
 
-	/*bar = new ZProgressBar(5, 5, 320, 25);
+	bar = new ZProgressBar(5, 5, 320, 25);
 	Win->AddControl(bar);
 
 	btn = new ZButton(L"µãÎÒ", 5, 35, 40, 25, ID_BTN1);
-	Win->AddControl(btn);*/
+	Win->AddControl(btn);
 
 	Menu = new ZMenu();
 	*Menu = LoadMenu(NULL, MAKEINTRESOURCE(IDR_MENU1));
 	Win->AddControl(Menu);
 
 	ZMenu* m = new ZMenu(L"²âÊÔ", NULL);
-	//Menu->AddItem(m);
-	//Menu->RemoveAt(0);
 	Menu->InsertItem(1, m);
 
-	/*CreateWindow(L"combobox", NULL, WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_HASSTRINGS,
-		190, 20, 80, 100, Win->GetHandle(), NULL, NULL, NULL);*/
-
-	ZComboBox* box = new ZComboBox(20, 20, 100, 100);
+	ZComboBox* box = new ZComboBox(5, 65, 100, 100);
 	Win->AddControl(box);
 	box->AddItem(L"Hello");
 	box->Insert(0, L"Bye");
