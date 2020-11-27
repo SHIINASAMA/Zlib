@@ -83,6 +83,9 @@
     <ClInclude Include="ZListBox.h">
       <Filter>Control</Filter>
     </ClInclude>
+    <ClInclude Include="ZFile.h">
+      <Filter>Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZString.cpp">
@@ -153,6 +156,9 @@
     </ClCompile>
     <ClCompile Include="ZListBox.cpp">
       <Filter>Control</Filter>
+    </ClCompile>
+    <ClCompile Include="ZFile.cpp">
+      <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

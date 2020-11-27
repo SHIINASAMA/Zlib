@@ -66,7 +66,7 @@ void ZString::operator=(WString str)
 
 void ZString::operator=(WChar str[])
 {
-	this->str = &str[0];
+	this->str = str;
 }
 
 ZString::operator WString()
