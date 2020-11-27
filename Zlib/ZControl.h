@@ -53,4 +53,7 @@ public:
 	ZSize GetSize();
 	//设置控件大小
 	void Size(ZSize Size);
+
+	//返回当前矩阵
+	ZRect GetRect();
 };

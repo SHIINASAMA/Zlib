@@ -25,4 +25,5 @@ public:
 	RECT GetRect();
 
 	operator RECT();
+	operator LPCRECT();
 };

@@ -110,3 +110,8 @@ void ZControl::Size(ZSize Size)
 		TRUE
 	);
 }
+
+ZRect ZControl::GetRect()
+{
+	return this->Rect;
+}

@@ -13,3 +13,9 @@ LRESULT ZGraphics::SetBkTransparent(BOOL IsTransparent, WPARAM wParam)
 	}
 	return (LRESULT)GetStockObject(NULL_BRUSH);
 }
+
+BOOL ZGraphics::InvalidateRect(HWND hWnd, ZRect Rect, BOOL value)
+{
+	RECT rect = Rect;
+	return ::InvalidateRect(hWnd, &rect, value);
+}
