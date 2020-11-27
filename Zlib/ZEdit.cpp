@@ -43,3 +43,8 @@ void ZEdit::Init(HWND hWnd)
 	Font.Create(L"ÐÂËÎÌå");
 	SetFont(Font);
 }
+
+void ZEdit::SetReadOnly(BOOL value)
+{
+	SendMessage(this->hWnd, EM_SETREADONLY, value, 0);
+}

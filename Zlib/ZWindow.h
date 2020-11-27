@@ -25,7 +25,7 @@ public:
 	DialogResult Result = No;
 
 	//初始化一个 ZWindow 对象
-	ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc);
+	ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc, DWORD Style = WS_OVERLAPPEDWINDOW);
 	//初始化一个 ZWindow 对象
 	ZWindow(ZString Text, int X, int Y, int W, int H, UINT Style, WNDCLASSEX wcex);
 	//释放资源

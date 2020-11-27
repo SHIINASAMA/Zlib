@@ -58,7 +58,6 @@ void ZPictureBox::Show()
 		switch (Mode)
 		{
 		case ZP_DISPLAYMODE_NORMAL:
-			//������ StretchBlt
 			SetStretchBltMode(hdc, COLORONCOLOR);
 			{
 				StretchBlt(hdc, 0, 0, Rect.GetSize().W, Rect.GetSize().H, hdcmem, 0, 0, bmp.bmWidth, bmp.bmHeight, SRCCOPY);

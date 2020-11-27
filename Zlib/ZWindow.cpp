@@ -36,7 +36,7 @@ void ZWindow::StartLoop()
 	ZControl::StartLoop();
 }
 
-ZWindow::ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc)
+ZWindow::ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc, DWORD Style)
 {
 	hInstance = ::GetModuleHandle(NULL);
 	wcex.cbSize = sizeof(WNDCLASSEX);
@@ -54,7 +54,7 @@ ZWindow::ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC
 
 	this->ClassName = wcex.lpszClassName;
 	this->Text = Text;
-	this->Style = WS_OVERLAPPEDWINDOW;
+	this->Style = Style;
 	ZRect Rect;
 	Rect.A.X = X;
 	Rect.A.Y = Y;

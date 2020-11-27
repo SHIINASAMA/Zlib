@@ -26,5 +26,6 @@ public:
 	ZRange GetRange();
 	//设置范围区间
 	void SetRange(UINT Max, UINT Min);
+	//设置范围区间
 	void SetRange(ZRange Range);
 };

@@ -16,4 +16,7 @@ public:
 	ZEdit(ZString Text, int X, int Y, int W, int H, DWORDLONG ID, DWORD Style = WS_CHILD | WS_VISIBLE | WS_BORDER);
 
 	void Init(HWND hWnd);
+
+	//…Ë÷√÷ª∂¡
+	void SetReadOnly(BOOL value);
 };
