@@ -4,7 +4,7 @@
 
 轻量级Windows平台开发SDK
 
-最新版本为<kbd>[0.1.4](https://github.com/SHIINASAMA/Zlib/releases)</kbd>
+最新版本为<kbd>[0.1.5](https://github.com/SHIINASAMA/Zlib/releases)</kbd>
 
 目标是抽取Win32开发的最主要部分，封装主要控件，同时还要保留最基本的消息循环机制。
 
