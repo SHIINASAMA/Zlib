@@ -1,3 +1,9 @@
+/**@file	ZControl.h
+* @brief	控件基类
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 #include <Windows.h>
 #include "ZGraphics.h"
@@ -18,42 +24,74 @@ protected:
 	ZRect Rect;
 	ZFont Font;
 
-	//注册类
+	/**@brief 用于注册类
+	*/
 	void RegClass();
-	//开始消息循环
+
+	/**@brief 开始消息循环
+	*/
 	void StartLoop();
 
 public:
 	ZControl();
 
-	//初始化
+	/**@brief		初始化
+	* @param hWnd	父项句柄
+	*/
 	virtual void Init(HWND hWnd);
 
-	//获取对象的类名
+	/**@brief 获取对象类名
+	* @retval 类名
+	*/
 	ZString GetClassName();
-	//返回当前对象的句柄
+
+	/**@brief 获取句柄
+	* @retval 句柄
+	*/
 	HWND GetHandle();
 
-	//返回文本
+	/**@brief 获取文本
+	* @retval 文本
+	*/
 	ZString GetText();
-	//设置文本
+
+	/**@brief		设置文本
+	* @param str	设置的文本
+	*/
 	void SetText(ZString str);
 
-	//返回当前使用的字体
+	/**@brief 获取当前使用的字体
+	* @retval 当前使用的字体
+	*/
 	ZFont GetFont();
-	//设置字体
+
+	/**@brief		设置字体
+	* @param Font	目标字体
+	*/
 	void SetFont(ZFont Font);
 
-	//返回当前控件的位置
+	/**@brief	获取控件当前的位置
+	* @retval	位置
+	*/
 	ZRect GetPosition();
-	//设置控件位置
+
+	/**@brief		设置控件位置
+	* @param Rect	目标位置
+	*/
 	void SetPosition(ZRect Rect);
 
-	//返回当前控件的大小
+	/**@brief	获取控件大小
+	* @retval	大小
+	*/
 	ZSize GetSize();
-	//设置控件大小
-	void Size(ZSize Size);
 
-	//返回当前矩阵
+	/**@brief		设置控件大小
+	* @param Size	目标大小
+	*/
+	void SetSize(ZSize Size);
+
+	/**@brief	返回当前矩阵
+	* @retval	矩阵
+	*/
 	ZRect GetRect();
 };

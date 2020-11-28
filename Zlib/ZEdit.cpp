@@ -1,9 +1,5 @@
 #include "ZEdit.h"
 
-ZEdit::ZEdit()
-{
-}
-
 ZEdit::ZEdit(ZString Text, ZRect Rect, DWORDLONG ID, DWORD Style)
 {
 	this->Text = Text;

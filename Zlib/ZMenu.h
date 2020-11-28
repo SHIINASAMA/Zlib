@@ -1,3 +1,9 @@
+/**@file	ZMenu.h
+* @brief	菜单控件类
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 
 #include "ZControl.h"
@@ -11,33 +17,74 @@ protected:
 	HMENU hMenu = CreateMenu();
 
 public:
-	//初始化一个 ZMenu 对象
+
+	/**@brief	初始化一个 ZMenu 对象
+	*/
 	ZMenu();
-	//初始化一个 ZMenu 对象
+
+	/**@brief		初始化一个 ZMenu 对象
+	* @param Text	控件文本
+	* @param ID		控件ID
+	* @param Style	控件风格
+	*/
 	ZMenu(ZString Text, DWORDLONG ID, DWORD Style = MF_STRING);
 
-	//获取 ZMenu 对象句柄
+	/**@brief	获取控件句柄
+	* @retval	返回句柄
+	*/
 	HWND GetHandle();
-	//设置文本
+
+	/**@brief		在实例化之前设置控件文本
+	* @param str	目标文本
+	*/
 	void SetTextPre(ZString str);
-	//设置ID
+
+	/**@brief		在实例化之前设置控件ID
+	* @param ID		目标ID
+	*/
 	void SetIDPre(UINT ID);
-	//设置风格
+
+	/**@brief		在实例化前设置控件风格
+	* @param Style	目标风格
+	*/
 	void SetStylePre(DWORD Style = MF_STRING);
-	//添加控件时父类调用的函数
+
+	/**@brief		初始化
+	* @param hWnd	父项句柄
+	*/
 	void Init(HWND hWnd);
-	//弹出上下文菜单
+
+	/**@brief		弹出上下文菜单
+	* @param hWnd	父项句柄
+	* @param X		相对于窗口X坐标
+	* @param Y		相对于窗口Y坐标
+	* @param Flag	标志
+	*/
 	void ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag = TPM_LEFTALIGN | TPM_LEFTBUTTON);
 
-	//添加子项
+	/**@brief		添加子项
+	* @param str	子项字符串
+	*/
 	void AddItem(ZItem* Item);
-	//获取子项
+
+	/**@brief		获取子项
+	* @param Pos	子项索引
+	*/
 	ZMenu GetItemAt(UINT Pos);
-	//插入子项
+
+	/**@brief		插入子项
+	* @param Pos	子项索引
+	* @param Item	目标子项
+	*/
 	void InsertItem(UINT Pos, ZItem* Item);
-	//移除子项
+
+	/**@brief		移除子项
+	* @param Pos	子项索引
+	*/
 	void RemoveAt(UINT Pos);
-	//子项初始化
+
+	/**@brief	子项初始化，供父项调用
+	*/
 	void InitItem();
 
 	operator HMENU();

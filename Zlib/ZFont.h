@@ -14,8 +14,8 @@ private:
 	HFONT font;
 
 public:
-	/**@brief	根据字体名称创建字体
-	* @param	字体名称
+	/**@brief		根据字体名称创建字体
+	* @param str	字体名称
 	*/
 	void Create(ZString FontName);
 

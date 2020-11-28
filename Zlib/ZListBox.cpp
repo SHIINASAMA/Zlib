@@ -1,9 +1,5 @@
 #include "ZListBox.h"
 
-ZListBox::ZListBox()
-{
-}
-
 ZListBox::ZListBox(ZRect rect, DWORD Style)
 {
 	this->Rect = rect;

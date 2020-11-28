@@ -101,7 +101,7 @@ ZSize ZControl::GetSize()
 	return Rect.GetSize();
 }
 
-void ZControl::Size(ZSize Size)
+void ZControl::SetSize(ZSize Size)
 {
 	MoveWindow(
 		hWnd, Rect.A.X, Rect.A.Y,

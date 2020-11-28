@@ -1,3 +1,9 @@
+/**@file	ZItem.h
+* @brief	Item基类
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 
 #include <Windows.h>
@@ -5,14 +11,25 @@
 class ZItem
 {
 private:
-	// 供父项 AddItem 调用
+	/**@brief		供父项AddItem调用
+	* @param hWnd	父项句柄
+	*/
 	void InitItem(HWND hWnd);
 
 public:
-	// 添加子项
+	/**@brief		添加子项
+	* @param Item	子项
+	*/
 	void AddItem(ZItem* Item);
-	// 移除子项
+
+	/**@brief		删除子项
+	* @param Pos	索引值
+	*/
 	void RemoveAt(UINT Pos);
-	// 插入子项
+
+	/**@brief		插入子项
+	* @param Pos	索引
+	* @param Item	子项
+	*/
 	void InsertItem(UINT Pos, ZItem* Item);
 };

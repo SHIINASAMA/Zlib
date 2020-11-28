@@ -1,9 +1,5 @@
 #include "ZComboBox.h"
 
-ZComboBox::ZComboBox()
-{
-}
-
 ZComboBox::ZComboBox(int X, int Y, int W, int H, DWORD Style)
 {
 	ZRect Rect;

@@ -1,9 +1,5 @@
 #include "ZButton.h"
 
-ZButton::ZButton()
-{
-}
-
 ZButton::ZButton(ZString Text, ZRect Rect, DWORDLONG ID)
 {
 	this->Text = Text;

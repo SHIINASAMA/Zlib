@@ -17,6 +17,7 @@ public:
 	/**@brief	实例化一个ZPoin对象
 	*/
 	ZPoint();
+
 	/**@brief	实例化一个ZPoin对象
 	* @param X	x坐标
 	* @param Y	y坐标
