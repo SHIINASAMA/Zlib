@@ -51,7 +51,7 @@ ZString ZFile::ReadLine(ZString path)
 	FILE* file = _wfsopen(path, L"r,ccs=utf-8", _SH_DENYNO);
 	if (file)
 	{
-		UINT len = -1;
+		int len = -1;
 		WChar ch;
 		do
 		{
@@ -68,7 +68,8 @@ ZString ZFile::ReadLine(ZString path)
 			WChar* str = new WChar[len];
 			fwscanf_s(file, L"%s", str, sizeof(str));
 			fclose(file);
-			return ZString(str);
+			ZString zstr = str;
+			return zstr;
 		}
 	}
 	else
@@ -83,7 +84,7 @@ WChar ZFile::Read(ZString path)
 	if (file)
 	{
 		WChar ch;
-		fwscanf_s(file, L"%c", &ch);
+		fwscanf_s(file, L"%c", &ch, sizeof(WChar));
 		return ch;
 	}
 	else
@@ -104,4 +105,76 @@ BOOL ZFile::Exists(ZString path)
 	{
 		return FALSE;
 	}
+}
+
+ZFile::ZFile(ZString path)
+{
+	file = _wfsopen(path, L"a+", _SH_DENYNO);
+}
+
+BOOL ZFile::IsGood()
+{
+	if (file)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+BOOL ZFile::Write(WChar ch)
+{
+	int len = fwprintf_s(file, L"%c", ch);
+	if (len == -1)
+	{
+		return FALSE;
+	}
+	else
+	{
+		return TRUE;
+	}
+}
+
+BOOL ZFile::WriteLine(ZString str)
+{
+	int len = fwprintf_s(file, L"%s", str);
+	if (len == -1)
+	{
+		return FALSE;
+	}
+	else
+	{
+		return TRUE;
+	}
+}
+
+WChar ZFile::Read()
+{
+	WChar ch;
+	fwscanf_s(file, L"%c", &ch, sizeof(WChar));
+	return ch;
+}
+
+ZString ZFile::ReadLine()
+{
+	int pos = fseek(file, 0L, SEEK_CUR);
+	int len = -1;
+	WChar ch;
+	do
+	{
+		fwscanf_s(file, L"%c", &ch, sizeof(WChar));
+		len++;
+	} while (ch != L'\n');
+
+	WChar* str = new WChar[len];
+	fwscanf_s(file, L"%s", str, sizeof(str));
+	ZString zstr = str;
+	return zstr;
+}
+
+void ZFile::Close()
+{
+	fclose(file);
 }

@@ -21,4 +21,10 @@ private:
 
 public:
 	ZFile(ZString path);
+	BOOL IsGood();
+	BOOL Write(WChar ch);
+	BOOL WriteLine(ZString str);
+	WChar Read();
+	ZString ReadLine();
+	void Close();
 };
