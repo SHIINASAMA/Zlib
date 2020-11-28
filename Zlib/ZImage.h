@@ -9,6 +9,8 @@
 #include <Windows.h>
 #include "ZString.h"
 
+/**@brief Í¼Ïñ»ùÀà
+*/
 class ZImage
 {
 public:

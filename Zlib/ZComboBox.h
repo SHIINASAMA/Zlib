@@ -9,6 +9,8 @@
 #include "ZControl.h"
 #include "ZItem.h"
 
+/**@brief 下拉栏控件类
+*/
 class ZComboBox : public ZControl
 {
 private:
@@ -30,6 +32,9 @@ public:
 	*/
 	ZComboBox(ZRect Rect, DWORD Style = WS_CHILD | WS_VISIBLE | WS_VSCROLL | CBS_DROPDOWNLIST | CBS_HASSTRINGS);
 
+	/**@brief		初始化
+	* @param hWnd	父项句柄
+	*/
 	void Init(HWND hWnd);
 
 	/**@brief		添加子项
@@ -72,7 +77,7 @@ public:
 	void RemoveAll();
 
 	/**@brief	获取子项总数
-	* @retbal	子项总数
+	* @retval	子项总数
 	*/
 	UINT GetCount();
 };

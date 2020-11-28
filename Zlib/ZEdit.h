@@ -8,6 +8,8 @@
 
 #include "ZControl.h"
 
+/**@brief 文本控制类
+*/
 class ZEdit : public ZControl
 {
 protected:
@@ -19,6 +21,7 @@ public:
 	* @param Text	控件的文本
 	* @param Rect	控件的坐标和大小
 	* @param ID		控件的ID
+	* @param Style	控件的风格
 	*/
 	ZEdit(ZString Text, ZRect Rect, DWORDLONG ID, DWORD Style = WS_CHILD | WS_VISIBLE | WS_BORDER);
 

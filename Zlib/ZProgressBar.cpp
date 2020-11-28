@@ -1,9 +1,5 @@
 #include "ZProgressBar.h"
 
-ZProgressBar::ZProgressBar()
-{
-}
-
 ZProgressBar::ZProgressBar(int X, int Y, int W, int H, UINT Max, UINT Min)
 {
 	this->Rect = ZRect(X, Y, X + W, Y + H);

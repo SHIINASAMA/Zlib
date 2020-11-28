@@ -6,6 +6,9 @@
 
 #pragma once
 #include "ZControl.h"
+
+/**@brief °´Å¥¿Ø¼þÀà
+*/
 class ZButton : public ZControl
 {
 protected:

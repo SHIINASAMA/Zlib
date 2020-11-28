@@ -10,11 +10,13 @@
 #include "ZIcon.h"
 #include "ZBitmap.h"
 
+/**@brief GDI相关
+*/
 class ZGraphics
 {
 public:
 	/**@brief				设置控件背景透明，应该在WM_CTLCOLORSTATIC并直接返回
-	* @param IsTransparant	是否透明
+	* @param IsTransparent	是否透明
 	* @param wParam			消息循环中的WPARAM
 	*/
 	static LRESULT SetBkTransparent(BOOL IsTransparent, WPARAM wParam);

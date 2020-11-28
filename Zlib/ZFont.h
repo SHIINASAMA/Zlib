@@ -8,14 +8,16 @@
 #include <Windows.h>
 #include "ZString.h"
 
+/**@brief 字体相关
+*/
 class ZFont
 {
 private:
 	HFONT font;
 
 public:
-	/**@brief		根据字体名称创建字体
-	* @param str	字体名称
+	/**@brief			根据字体名称创建字体
+	* @param FontName	字体名称
 	*/
 	void Create(ZString FontName);
 

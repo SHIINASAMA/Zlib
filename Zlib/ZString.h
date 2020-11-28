@@ -12,6 +12,8 @@
 #define AString char*
 #define AChar char
 
+/**@brief ×Ö·û´®Àà
+*/
 class ZString
 {
 private:

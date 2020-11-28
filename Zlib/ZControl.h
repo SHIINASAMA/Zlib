@@ -9,6 +9,8 @@
 #include "ZGraphics.h"
 #include "ZFont.h"
 
+/**@brief ¿Ø¼þ»ùÀà
+*/
 class ZControl
 {
 protected:

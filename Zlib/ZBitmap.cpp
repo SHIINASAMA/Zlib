@@ -1,5 +1,9 @@
 #include "ZBitmap.h"
 
+ZBitmap::ZBitmap()
+{
+}
+
 ZBitmap::ZBitmap(ZString path)
 {
 	LoadResFromFile(path);

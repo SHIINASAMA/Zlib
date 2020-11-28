@@ -11,6 +11,8 @@
 #include <fstream>
 #include <istream>
 
+/**@brief 文件相关
+*/
 class ZFile
 {
 public:
@@ -41,7 +43,7 @@ public:
 	static WChar Read(ZString path);
 
 	/**@brief		判断文件是否存在
-	* @param		文件路径
+	* @param path	文件路径
 	* @retval		结果
 	*/
 	static BOOL Exists(ZString path);
@@ -66,8 +68,8 @@ public:
 	BOOL Write(WChar ch);
 
 	/**@brief		写入字符串
-	* @param path	要写入的字符串
-	* @param		写入是否成功
+	* @param str	要写入的字符串
+	* @retval		写入是否成功
 	*/
 	BOOL WriteLine(ZString str);
 

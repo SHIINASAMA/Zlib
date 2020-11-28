@@ -8,6 +8,8 @@
 
 #include <windows.h>
 
+/**@brief 二维点结构
+*/
 class ZPoint
 {
 public:

@@ -1,10 +1,6 @@
 ﻿#include "ZPictureBox.h"
 
-ZPictureBox::ZPictureBox()
-{
-}
-
-ZPictureBox::ZPictureBox(ZRect Rect, HWND PhWnd, DWORDLONG ID, UINT Mode)
+ZPictureBox::ZPictureBox(ZRect Rect, DWORDLONG ID, UINT Mode)
 {
 	this->Rect = Rect;
 	this->Bmp = Bmp;
@@ -13,7 +9,7 @@ ZPictureBox::ZPictureBox(ZRect Rect, HWND PhWnd, DWORDLONG ID, UINT Mode)
 	this->Mode = Mode;
 }
 
-ZPictureBox::ZPictureBox(int X, int Y, int W, int H, HWND PhWnd, DWORDLONG ID, UINT Mode)
+ZPictureBox::ZPictureBox(int X, int Y, int W, int H, DWORDLONG ID, UINT Mode)
 {
 	ZRect Rect;
 	Rect.A.X = X;
@@ -42,8 +38,8 @@ void ZPictureBox::Init(HWND hWnd)
 		(HINSTANCE)GetWindowLong(hWnd, -6),
 		NULL
 	);
-
-	Font.Create(L"������");
+	this->PhWnd = hWnd;
+	Font.Create(L"新宋体");
 }
 
 void ZPictureBox::Show()

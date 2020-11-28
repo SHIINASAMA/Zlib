@@ -5,12 +5,18 @@
 */
 #pragma once
 #include "ZImage.h"
+/**@brief Bmp图像相关
+*/
 class ZBitmap :public ZImage
 {
 private:
 	HBITMAP hmap;
 
 public:
+	/**@brief 默认构造函数
+	*/
+	ZBitmap();
+
 	/**@brief		根据路径初始化资源
 	* @param path	外部资源路径
 	*/

@@ -11,6 +11,8 @@
 
 #define ZMenuItem ZMenu
 
+/**@brief 菜单控件类
+*/
 class ZMenu : public ZControl, public ZItem
 {
 protected:
@@ -63,7 +65,7 @@ public:
 	void ShowPopupMenu(HWND hWnd, UINT X, UINT Y, UINT Flag = TPM_LEFTALIGN | TPM_LEFTBUTTON);
 
 	/**@brief		添加子项
-	* @param str	子项字符串
+	* @param Item	子项
 	*/
 	void AddItem(ZItem* Item);
 

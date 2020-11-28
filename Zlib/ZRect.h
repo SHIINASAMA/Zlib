@@ -8,6 +8,8 @@
 #include "ZPoint.h"
 #include "ZSize.h"
 
+/**@brief æÿ’Û¿‡
+*/
 class ZRect
 {
 public:

@@ -1,9 +1,5 @@
 #include "ZStatic.h"
 
-ZStatic::ZStatic()
-{
-}
-
 ZStatic::ZStatic(ZString Text, ZRect Rect)
 {
 	this->Text = Text;

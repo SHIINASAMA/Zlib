@@ -7,6 +7,9 @@
 #pragma once
 #include <Windows.h>
 #include <Commctrl.h>
+
+/**@brief 区间结构
+*/
 class ZRange
 {
 public:

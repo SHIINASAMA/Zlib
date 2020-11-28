@@ -6,6 +6,8 @@
 
 #pragma once
 
+/**@brief Item»ùÀà
+*/
 #include <Windows.h>
 
 class ZItem

@@ -1,13 +1,26 @@
+/**@file	ZPictureBox.h
+* @brief	图片控件类
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 #include "ZControl.h"
 
-//自动缩放不适应控件
+/**@brief 自动缩放不适应控件
+*/
 #define ZP_DISPLAYMODE_NORMAL	0
-//自动缩放且适应控件
+
+/**@brief 自动缩放且适应控件
+*/
 #define ZP_DISPLAYMODE_ZOOM		1
-//不自动缩放不适应
+
+/**@brief 不自动缩放不适应
+*/
 #define ZP_DISPLAYMODE_NONE		2
 
+/**@brief 图片控件类
+*/
 class ZPictureBox : public ZControl
 {
 protected:
@@ -19,24 +32,44 @@ protected:
 	ZBitmap Bmp;
 
 public:
-	//初始化一个 ZPictureBox 对象
-	ZPictureBox();
-	//初始化一个 ZPictureBox 对象，参数 PhWnd 为父窗口句柄，仅用于刷新图像
-	ZPictureBox(ZRect Rect, HWND PhWnD, DWORDLONG ID, UINT Mode = ZP_DISPLAYMODE_NORMAL);
-	//初始化一个 ZPictureBox 对象，参数 PhWnd 为父窗口句柄，仅用于刷新图像
-	ZPictureBox(int X, int Y, int W, int H, HWND PhWnd, DWORDLONG ID, UINT Mode = ZP_DISPLAYMODE_NORMAL);
+	/**@brief		初始化ZPictureBox对象
+	* @param Rect	控件的坐标和大小
+	* @param ID		控件ID
+	* @param Mode	图像模式
+	*/
+	ZPictureBox(ZRect Rect, DWORDLONG ID, UINT Mode = ZP_DISPLAYMODE_NORMAL);
+
+	/**@brief		初始化ZPictureBox对象
+	* @param X		控件的X坐标
+	* @param Y		控件的Y坐标
+	* @param W		控件的宽
+	* @param H		控件的高
+	* @param ID		控件ID
+	* @param Mode	图像模式
+	*/
+	ZPictureBox(int X, int Y, int W, int H, DWORDLONG ID, UINT Mode = ZP_DISPLAYMODE_NORMAL);
 	void Init(HWND hWnd);
 
-	//该方法应该在 WM_PAINT 消息中被调用
+	/**@brief	该方法应该在WM_PAINT消息中被调用
+	*/
 	void Show();
-	//设置图像
+
+	/**@brief		设置图像
+	* @param Bmp	目标图像
+	*/
 	void SetImage(ZBitmap Bmp);
-	//清除图像
+
+	/**@brief	清除图像
+	*/
 	void CleanImage();
-	//设置显示模式
+
+	/**@brief		设置显示模式
+	* @param Mode	目标显示模式
+	*/
 	void SetMode(UINT Mode);
 
 private:
-	//立即刷新
+	/**@brief	立即更新控件
+	*/
 	void UpdateMessage();
 };

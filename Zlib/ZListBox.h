@@ -1,11 +1,13 @@
 /**@file	ZListBox.h
-* @brief	下拉栏控件类
+* @brief	列表控件类
 * @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
 * @date		2020-11-28
 */
 
 #pragma once
 
+/**@brief 列表控件类
+*/
 #include "ZControl.h"
 
 class ZListBox : public ZControl
@@ -15,7 +17,7 @@ private:
 
 public:
 	/**@brief		初始化一个 ZListBox 对象
-	* @param Rect	控件的坐标和大小
+	* @param rect	控件的坐标和大小
 	* @param Style	控件的风格
 	*/
 	ZListBox(ZRect rect, DWORD Style = WS_CHILD | WS_VSCROLL | WS_TABSTOP | LBS_STANDARD | LBS_HASSTRINGS | WS_VISIBLE | WS_BORDER);
@@ -75,7 +77,7 @@ public:
 	void RemoveAll();
 
 	/**@brief	获取子项总数
-	* @retbal	子项总数
+	* @retval	子项总数
 	*/
 	UINT GetCount();
 };

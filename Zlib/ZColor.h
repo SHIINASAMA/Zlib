@@ -7,6 +7,8 @@
 
 #include <Windows.h>
 
+/**@brief ÑÕÉ«Ïà¹Ø
+*/
 class ZColor
 {
 private:

@@ -7,6 +7,8 @@
 #pragma once
 #include "ZImage.h"
 
+/**@brief Icon图像相关
+*/
 class ZIcon : public ZImage
 {
 	HICON hIcon;
@@ -20,17 +22,17 @@ public:
 	ZIcon(ZString path);
 
 	/**@brief		根据资源ID初始化ZIcon对象
-	* @param path	资源ID
+	* @param ID		资源ID
 	*/
 	ZIcon(WORD ID);
 
 	/**@brief		根据路径加载ZIcon对象
-	* @param path	外部资源路径
+	* @param Path	外部资源路径
 	*/
 	void LoadResFromFile(ZString Path);
 
 	/**@brief		根据资源ID初始化ZIcon对象
-	* @param path	资源ID
+	* @param ID		资源ID
 	*/
 	void LoadRes(WORD ID);
 };
