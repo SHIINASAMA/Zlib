@@ -1,3 +1,9 @@
+/**@file	ZString.h
+* @brief	字符串
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 #include <Windows.h>
 
@@ -12,23 +18,43 @@ private:
 	WString str;
 
 public:
+	/**@brief		初始化一个空 ZString 对象
+、	*/
 	ZString();
-	//用 WString 初始化一个 ZString 对象
+
+	/**@brief		用 WString 初始化一个 ZString 对象
+	* @param str	源 WString
+	*/
 	ZString(WString str);
-	//用 AString 初始化一个 ZString 对象
+
+	/**@brief		用 AString 初始化一个 ZString 对象
+	* @param str	源 AString
+	*/
 	ZString(AString str);
 
-	// 转换 WString 对象
+	/**@brief		将 WString 转化成 ZString 对象
+	* @param str	源 WString
+	*/
 	void Pause(WString str);
-	// 转换 AString 对象
+
+	/**@brief		将 AString 转化成 ZString 对象
+	* @param str	源 AString
+	*/
 	void Pause(AString str);
 
-	//输出 WString 对象
+	/**@brief 输出 WString 对象
+	* @retval 目标 WString
+	*/
 	WString ToWString();
-	//输出 AString 对象
+
+	/**@brief 输出 AString 对象
+	* @retval 目标 AString
+	*/
 	AString ToAString();
 
-	// 返回 ZString 对象的长度
+	/**@brief	获取字符串长度
+	* @retval	字符串长度
+	*/
 	int Len();
 
 	void operator=(WString str);

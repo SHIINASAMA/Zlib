@@ -1,3 +1,8 @@
+/**@file	ZBitmap.h
+* @brief	Bmp图像相关
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
 #pragma once
 #include "ZImage.h"
 class ZBitmap :public ZImage
@@ -6,18 +11,28 @@ private:
 	HBITMAP hmap;
 
 public:
-	ZBitmap();
-	//初始化一个 ZBitmap 对象
+	/**@brief		根据路径初始化资源
+	* @param path	外部资源路径
+	*/
 	ZBitmap(ZString path);
-	//初始化一个 ZBitmap 对象
+	/**@brief	根据资源 ID 初始化 ZBitmap 对象
+	* @param	ID 资源ID
+	*/
 	ZBitmap(WORD ID);
 
-	//从资源中加载 bmp 位图
+	/**@brief	根据 ID 加载资源
+	* @param	ID
+	*/
 	void LoadRes(WORD ID);
-	//从文件中加载 bmp 位图
+
+	/**@brief	根据路径加载资源
+	* @param	path
+	*/
 	void LoadResFromFile(ZString path);
 
-	// 返回一个 BITMAP 对象
+	/**@brief 返回BITMAP对象
+	* @retval BITMAP结构
+	*/
 	BITMAP GetBitmap();
 
 	void operator=(HBITMAP hBmp);

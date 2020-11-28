@@ -1,9 +1,5 @@
 #include "ZColor.h"
 
-ZColor::ZColor()
-{
-}
-
 ZColor::ZColor(BYTE R, BYTE G, BYTE B)
 {
 	this->color = RGB(R, G, B);

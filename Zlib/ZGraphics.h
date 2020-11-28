@@ -1,3 +1,9 @@
+/**@file	ZGraphics.h
+* @brief	GDI相关
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 #include "ZRect.h"
 #include "ZColor.h"
@@ -7,9 +13,17 @@
 class ZGraphics
 {
 public:
-	//设置控件的背景是否是透明的,应在 WM_CTLCOLORSTATIC 中处理并返回
+	/**@brief				设置控件背景透明，应该在WM_CTLCOLORSTATIC并直接返回
+	* @param IsTransparant	是否透明
+	* @param wParam			消息循环中的WPARAM
+	*/
 	static LRESULT SetBkTransparent(BOOL IsTransparent, WPARAM wParam);
 
-	//设置刷新区域
+	/**@brief			设置刷新区域
+	* @param	hWnd	刷新窗口的句柄
+	* @param	Rect	刷新窗口的区域
+	* @param	B		是否擦除原有背景
+	* @retval	操作结果
+	*/
 	static BOOL InvalidateRect(HWND hWnd, ZRect Rect, BOOL B);
 };

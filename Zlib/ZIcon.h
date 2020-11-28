@@ -1,3 +1,9 @@
+/**@file	ZIcon.h
+* @brief	Icon图像相关
+* @author	SHIINASAMA(SHIINA_KAORU@OUTLOOK.COM)
+* @date		2020-11-28
+*/
+
 #pragma once
 #include "ZImage.h"
 
@@ -8,14 +14,23 @@ public:
 	void operator=(HICON hIcon);
 	operator HICON();
 
-	ZIcon();
-	//初始化一个ZIcon对象
+	/**@brief		根据路径初始化ZIcon对象
+	* @param path	外部资源路径
+	*/
 	ZIcon(ZString path);
-	//初始化一个ZIcon对象
+
+	/**@brief		根据资源ID初始化ZIcon对象
+	* @param path	资源ID
+	*/
 	ZIcon(WORD ID);
 
-	//从文件中加载 Icon 资源
+	/**@brief		根据路径加载ZIcon对象
+	* @param path	外部资源路径
+	*/
 	void LoadResFromFile(ZString Path);
-	//从资源中加载 Icon 资源
+
+	/**@brief		根据资源ID初始化ZIcon对象
+	* @param path	资源ID
+	*/
 	void LoadRes(WORD ID);
 };

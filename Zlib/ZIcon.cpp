@@ -10,10 +10,6 @@ ZIcon::operator HICON()
 	return this->hIcon;
 }
 
-ZIcon::ZIcon()
-{
-}
-
 ZIcon::ZIcon(ZString path)
 {
 	this->hIcon = (HICON)LoadImage(
