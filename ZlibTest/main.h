@@ -15,27 +15,6 @@
 #include <stdio.h>
 
 ZWindow* Win;
-ZStatic* text;
-LPWSTR str = new WCHAR[128];
-
-DWORD WINAPI Change(LPVOID)
-{
-	int time = 0;
-	for (int h = 0; h < 24; h++)
-	{
-		for (int m = 0; m < 60; m++)
-		{
-			for (int s = 0; s < 60; s++)
-			{
-				wsprintf(str, L"%d:%d:%dµÚ%d´ÎÏëÄã", h, m, s, ++time);
-				text->SetText(str);
-				ZGraphics::InvalidateRect(Win->GetHandle(), text->GetRect(), TRUE);
-				Sleep(1000);
-			}
-		}
-	}
-	return 0;
-}
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {

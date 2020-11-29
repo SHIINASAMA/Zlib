@@ -35,11 +35,31 @@ public:
 	};
 	DialogResult Result = No;
 
-	//初始化一个 ZWindow 对象
+	/**@brief			初始化一个ZWindow对象
+	* @param Text		控件文本
+	* @param Name		控件类名
+	* @param X			控件X坐标
+	* @param Y			控件Y坐标
+	* @param W			控件的宽
+	* @param H			控件的高
+	* @param WndProc	消息循环
+	* @param Style		控件的风格
+	*/
 	ZWindow(ZString Text, ZString Name, int X, int Y, int W, int H, WNDPROC WndProc, DWORD Style = WS_OVERLAPPEDWINDOW);
-	//初始化一个 ZWindow 对象
+
+	/**@brief			初始化一个ZWindow对象
+	* @param Text		控件文本
+	* @param X			控件X坐标
+	* @param Y			控件Y坐标
+	* @param W			控件的宽
+	* @param H			控件的高
+	* @param Style		控件的风格
+	* @param wcex		WNDCLASSEX
+	*/
 	ZWindow(ZString Text, int X, int Y, int W, int H, UINT Style, WNDCLASSEX wcex);
-	//释放资源
+
+	/**@brief 控件资源释放
+	*/
 	~ZWindow();
 
 	/**@brief		初始化
