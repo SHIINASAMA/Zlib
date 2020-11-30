@@ -89,6 +89,9 @@
     <ClInclude Include="ZThread.h">
       <Filter>Base</Filter>
     </ClInclude>
+    <ClInclude Include="ZDebug.h">
+      <Filter>Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ZString.cpp">
@@ -164,6 +167,9 @@
       <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="ZThread.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ZDebug.cpp">
       <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>

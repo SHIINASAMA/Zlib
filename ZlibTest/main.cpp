@@ -1,4 +1,5 @@
 #include "main.h"
+#include "../Zlib/ZDebug.h"
 
 DWORD WINAPI Print(PARAM)
 {
@@ -21,6 +22,9 @@ int main()
 	{
 		printf("[Main Thread]:\t\tHello\n");
 	}
+
+	SetLastError(1400);
+	ZDebug::ShowLastError(L"’‚ «≤‚ ‘");
 
 	system("pause");
 	return 0;

@@ -341,3 +341,6 @@ healthchecksdb
 
 #doxygen doc
 out/
+
+#vs file
+.vs/
