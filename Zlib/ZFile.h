@@ -11,7 +11,7 @@
 #include <fstream>
 #include <istream>
 
-/**@brief 文件相关
+/**@brief 文件类
 */
 class ZFile
 {

@@ -10,7 +10,7 @@
 #include "ZIcon.h"
 #include "ZBitmap.h"
 
-/**@brief GDIœ‡πÿ
+/**@brief GDI¿‡
 */
 class ZGraphics
 {

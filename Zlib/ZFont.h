@@ -8,7 +8,7 @@
 #include <Windows.h>
 #include "ZString.h"
 
-/**@brief 字体相关
+/**@brief 字体类
 */
 class ZFont
 {

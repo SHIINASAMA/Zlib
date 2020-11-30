@@ -5,7 +5,7 @@
 */
 #pragma once
 #include "ZImage.h"
-/**@brief BmpÍ¼ÏñÏà¹Ø
+/**@brief BmpÍ¼ÏñÀà
 */
 class ZBitmap :public ZImage
 {

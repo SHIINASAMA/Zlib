@@ -7,7 +7,7 @@
 #pragma once
 #include "ZImage.h"
 
-/**@brief IconÍ¼ÏñÏà¹Ø
+/**@brief IconÍ¼ÏñÀà
 */
 class ZIcon : public ZImage
 {

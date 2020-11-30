@@ -7,7 +7,7 @@
 
 #include <Windows.h>
 
-/**@brief 颜色相关
+/**@brief 颜色类
 */
 class ZColor
 {

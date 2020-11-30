@@ -1,5 +1,5 @@
 #pragma once
-#define HIDE
+//#define HIDE
 #include "../Zlib/ZWindow.h"
 #include "../Zlib/ZStatic.h"
 #include "../Zlib/ZButton.h"
@@ -11,6 +11,8 @@
 #include "../Zlib/ZNotify.h"
 #include "../Zlib/ZComboBox.h"
 #include "../Zlib/ZListBox.h"
+#include "../Zlib/ZFile.h"
+#include "../Zlib/ZThread.h"
 #include "resource.h"
 #include <stdio.h>
 

@@ -42,6 +42,7 @@
     <ClInclude Include="ZSize.h" />
     <ClInclude Include="ZStatic.h" />
     <ClInclude Include="ZString.h" />
+    <ClInclude Include="ZThread.h" />
     <ClInclude Include="ZWindow.h" />
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +69,7 @@
     <ClCompile Include="ZSize.cpp" />
     <ClCompile Include="ZStatic.cpp" />
     <ClCompile Include="ZString.cpp" />
+    <ClCompile Include="ZThread.cpp" />
     <ClCompile Include="ZWindow.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

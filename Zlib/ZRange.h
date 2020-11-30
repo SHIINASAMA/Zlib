@@ -8,7 +8,7 @@
 #include <Windows.h>
 #include <Commctrl.h>
 
-/**@brief 区间结构
+/**@brief 区间类
 */
 class ZRange
 {
