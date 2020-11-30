@@ -23,7 +23,6 @@
     <ClInclude Include="ZButton.h" />
     <ClInclude Include="ZColor.h" />
     <ClInclude Include="ZComboBox.h" />
-    <ClInclude Include="ZDebug.h" />
     <ClInclude Include="ZEdit.h" />
     <ClInclude Include="ZFile.h" />
     <ClInclude Include="ZFont.h" />
@@ -51,7 +50,6 @@
     <ClCompile Include="ZButton.cpp" />
     <ClCompile Include="ZColor.cpp" />
     <ClCompile Include="ZComboBox.cpp" />
-    <ClCompile Include="ZDebug.cpp" />
     <ClCompile Include="ZEdit.cpp" />
     <ClCompile Include="ZFile.cpp" />
     <ClCompile Include="ZFont.cpp" />
